@@ -1,33 +1,18 @@
-"""
-    Author(s):
-    Marcello Zanghieri <marcello.zanghieri2@unibo.it>
-    
-    Copyright (C) 2023 University of Bologna and ETH Zurich
-    
-    Licensed under the GNU Lesser General Public License (LGPL), Version 2.1
-    (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-        https://www.gnu.org/licenses/lgpl-2.1.txt
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-"""
-
 from __future__ import annotations
 
 import torch  # for tensors
 from torch import nn
 import torchinfo
 
-from online_semg_posture_adaptation import dataset as ds
-
 
 """
+
+###############################################################################
+--> FOR THE EXTENSION, THIS ONLY HOLDS FOR hidden=8!!!
+--> decide heurostic for the other dataset(s): 8, +4, x2, **1.5, ...
+###############################################################################
+
+
 This module implements in PyTorch the 2-layer Multi-Layer Perceptron (MLP)
 termed Neural Network (NN) and used in the paper:
 
@@ -46,18 +31,15 @@ Differences:
 """
 
 
-HIDDEN_UNITS = 8
-
-
 class MLPUniboINAIL(nn.Module):
 
-    def __init__(self):
+    def __init__(self, num_input, num_hidden, num_output):
         super(MLPUniboINAIL, self).__init__()
 
-        self.fc0 = nn.Linear(ds.NUM_CHANNELS, HIDDEN_UNITS, bias=False)
-        self.fc0_bn = nn.BatchNorm1d(8)
+        self.fc0 = nn.Linear(num_input, num_hidden, bias=False)
+        self.fc0_bn = nn.BatchNorm1d(num_hidden)
         self.fc0_relu = nn.ReLU()
-        self.fc1 = nn.Linear(8, ds.NUM_CLASSES, bias=False)
+        self.fc1 = nn.Linear(num_hidden, num_output, bias=False)
 
     def forward(self, x: torch.tensor) -> torch.tensor:
         x = self.fc0(x)
@@ -69,12 +51,13 @@ class MLPUniboINAIL(nn.Module):
 
 def summarize(
     model: nn.Module,
+    num_input: int,
     verbose: 0 | 1 | 2 = 0,
 ) -> torchinfo.ModelStatistics:
 
     # set all parameters for torchsummary
 
-    input_size = (ds.NUM_CHANNELS,)
+    input_size = (num_input,)
     batch_dim = 0  # index of the batch dimension
     col_names = [
         'input_size',
