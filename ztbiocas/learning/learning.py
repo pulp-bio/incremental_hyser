@@ -9,8 +9,8 @@ import sklearn.utils as sklutils
 import torch
 import torch.utils.data
 
-from settings import DEVICE
-from analysis import goodness as good
+from .settings import DEVICE
+from ..analysis import goodness as good
 
 
 NUM_EPOCHS = 16  # epochs of floating-point training

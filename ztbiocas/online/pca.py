@@ -1,30 +1,10 @@
-"""
-    Author(s):
-    Marcello Zanghieri <marcello.zanghieri2@unibo.it>
-    
-    Copyright (C) 2023 University of Bologna and ETH Zurich
-    
-    Licensed under the GNU Lesser General Public License (LGPL), Version 2.1
-    (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-        https://www.gnu.org/licenses/lgpl-2.1.txt
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-"""
-
 from __future__ import annotations
 import enum
 
 import numpy as np
 
-from online_semg_posture_adaptation import dataset as ds
-from online_semg_posture_adaptation.online import covariance as cov
+#from online_semg_posture_adaptation import dataset as ds
+#from online_semg_posture_adaptation.online import covariance as cov
 
 
 def symm_orth_no_eig(
@@ -144,28 +124,24 @@ def oja_sga_session(
     gamma_scheduled: np.ndarray(np.float32),
 ) -> np.ndarray(np.float32):
 
-    num_chnls, num_samples = x.shape
+    num_ch, num_samples = x.shape
 
-    W_sequence = np.zeros(
-        (num_samples + 1, num_chnls, num_chnls), dtype=np.float32)
-    W_sequence[0] = W_init
-
-    mean = np.zeros(ds.NUM_CHANNELS, dtype=np.float32)
-    ncov = np.zeros((ds.NUM_CHANNELS, ds.NUM_CHANNELS), dtype=np.float32)
+    w_sequence = np.zeros(
+        (num_samples + 1, num_ch, num_ch), dtype=np.float32)
+    w_sequence[0] = W_init
 
     for idx_sample in range(num_samples):
 
-        mean, ncov, _ = cov.update_cov(
-            x[:, idx_sample], mean, ncov, idx_sample + 1)
-        scale = np.sqrt(np.diag(ncov) / (idx_sample + 1))
+        mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
+        scale = x[:, :idx_sample].std(axis=1)  # equivalent to online
 
-        W_sequence[idx_sample + 1] = oja_sga_step(
+        w_sequence[idx_sample + 1] = oja_sga_step(
             (x[:, idx_sample] - mean) / scale,
-            W_sequence[idx_sample],
+            w_sequence[idx_sample],
             gamma_scheduled[idx_sample],
         )
 
-    return W_sequence, mean, scale
+    return w_sequence, mean, scale
 
 
 def main() -> None:

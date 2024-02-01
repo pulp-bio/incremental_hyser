@@ -5,8 +5,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import torch.nn  # just for nn.Module
 
-from online import pca as opca
-from learning.learning import do_inference
+from .online import pca as opca
+from .learning.learning import do_inference
+from .analysis.goodness import compute_classification_metrics
+# to be generalized
 
 
 
@@ -41,7 +43,9 @@ def online_pca_calibration_session(
 
 def calibration_experiment(
     xcalib: np.ndarray[np.float32],
+    ycalib,
     xvalid: np.ndarray[np.float32],
+    yvalid,
     beta: float,
     stdscaler_train: StandardScaler,
     pca_train: PCA,
@@ -79,18 +83,33 @@ def calibration_experiment(
     yout_valid_refit = do_inference(xvalid_pc_refit, model, output_scale)
     del xcalib_pc_refit, xvalid_pc_refit
 
-    yout_dict = {
+    # yout_dict = {
+    #    'calibration': {
+    #        'frozen': yout_calib_froz,
+    #        'refit': yout_calib_refit,
+    #    },
+    #    'validation': {
+    #        'frozen': yout_valid_froz,
+    #        'refit': yout_valid_refit,
+    #    },
+    # }
+
+    metrics_calib_froz = compute_classification_metrics(ycalib, yout_calib_froz)
+    metrics_valid_froz = compute_classification_metrics(yvalid, yout_valid_froz)
+    metrics_calib_refit = compute_classification_metrics(ycalib, yout_calib_refit)
+    metrics_valid_refit = compute_classification_metrics(yvalid, yout_valid_refit)
+    metrics = {
         'calibration': {
-            'frozen': yout_calib_froz,
-            'refit': yout_calib_refit,
+            'frozen': metrics_calib_froz,
+            'refit': metrics_calib_refit,
         },
         'validation': {
-            'frozen': yout_valid_froz,
-            'refit': yout_valid_refit,
+            'frozen': metrics_valid_froz,
+            'refit': metrics_valid_refit,
         },
     }
 
-    return yout_dict
+    return metrics
 
 
 def main() -> None:
