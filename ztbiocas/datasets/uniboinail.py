@@ -18,7 +18,7 @@ FS_HZ = 500.0  # sampling rate in Hz
 
 # in home filesystem: /home/zanghieri/work/UniboINAIL_BioCAS2019/
 # in scratch memory:  /scratch/zanghieri/unibo_inail/data/downloaded/
-LOCAL_DATASET_FOLDER = '/scratch/zanghieri/unibo_inail/data/downloaded/'
+LOCAL_DATASET_FOLDER = '/home/zanghieri/work/UniboINAIL_BioCAS2019/'
 FILENAME_TEMPLATE = 'DATA_EMG_U%d.mat'  # one file per subject
 
 

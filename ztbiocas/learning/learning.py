@@ -21,7 +21,7 @@ MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 class EMGSessionDataset():
 
     """
-    For PyTorch's needs, a "dataset" is just an onbject with a __getitem__ and
+    For PyTorch's needs, a "dataset" is just an object with a __getitem__ and
     a __len__
     """
 
@@ -229,7 +229,7 @@ def do_training(
         f"\n"
         f"\t\tTRAINING\t\tVALIDATION\n"
         f"\n"
-        "EPOCH\t\tLoss\tBal.acc.\tLoss\tBal.acc.\tTime (s)\n"
+        "EPOCH\t\tLoss\tProxy\tLoss\tProxy\tTime (s)\n"
     )
     for idx_epoch in range(num_epochs):
 
@@ -260,23 +260,45 @@ def do_training(
         deltat_epoch_s = t_end_epoch_s - t_start_epoch_s
 
         if xvalid is not None and yvalid is not None:
-            print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
-                idx_epoch + 1,
-                num_epochs,
-                metrics_train_epoch['balanced_crossentropy'],
-                metrics_train_epoch['balanced_accuracy'],
-                metrics_valid_epoch['balanced_crossentropy'],
-                metrics_valid_epoch['balanced_accuracy'],
-                deltat_epoch_s,
-            ))
+            if mltask is MLTask.CLASSIFICATION:
+                print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
+                    idx_epoch + 1,
+                    num_epochs,
+                    metrics_train_epoch['balanced_crossentropy'],
+                    metrics_train_epoch['balanced_accuracy'],
+                    metrics_valid_epoch['balanced_crossentropy'],
+                    metrics_valid_epoch['balanced_accuracy'],
+                    deltat_epoch_s,
+                ))
+            else:
+                print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
+                    idx_epoch + 1,
+                    num_epochs,
+                    metrics_train_epoch['rmse'],
+                    metrics_train_epoch['mae'],
+                    metrics_valid_epoch['rmse'],
+                    metrics_valid_epoch['mae'],
+                    deltat_epoch_s,
+                ))
+
         else:
-            print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
-                idx_epoch + 1,
-                num_epochs,
-                metrics_train_epoch['balanced_crossentropy'],
-                metrics_train_epoch['balanced_accuracy'],
-                deltat_epoch_s,
-            ))
+            if mltask is MLTask.CLASSIFICATION:
+                print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
+                    idx_epoch + 1,
+                    num_epochs,
+                    metrics_train_epoch['balanced_crossentropy'],
+                    metrics_train_epoch['balanced_accuracy'],
+                    deltat_epoch_s,
+                ))
+            else:
+                print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
+                    idx_epoch + 1,
+                    num_epochs,
+                    metrics_train_epoch['rmse'],
+                    metrics_train_epoch['mae'],
+                    deltat_epoch_s,
+                ))
+
 
         history['epoch'][idx_epoch] = {
             'training': metrics_train_epoch,
@@ -290,5 +312,5 @@ def main() -> None:
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
