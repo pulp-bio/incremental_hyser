@@ -1,23 +1,3 @@
-"""
-    Author(s):
-    Marcello Zanghieri <marcello.zanghieri2@unibo.it>
-    
-    Copyright (C) 2023 University of Bologna and ETH Zurich
-    
-    Licensed under the GNU Lesser General Public License (LGPL), Version 2.1
-    (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-        https://www.gnu.org/licenses/lgpl-2.1.txt
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-"""
-
 from __future__ import annotations
 import enum
 import os
@@ -31,9 +11,7 @@ import sklearn.utils as sklutils
 import torch
 import torch.utils.data
 
-from online_semg_posture_adaptation import dataset as ds
-from online_semg_posture_adaptation.learning.settings import DEVICE
-from online_semg_posture_adaptation.learning import goodness as good
+from settings import DEVICE
 
 
 NUM_EPOCHS = 16  # epochs of floating-point training
@@ -41,26 +19,24 @@ MINIBATCH_SIZE_TRAIN = 64  # minibatch size for training
 MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 
 
-class UniboINAILSessionDataset():
+class EMGSessionDataset():
 
     """
-    For PyThorch's needs, a "dataset" is just an onbject with a __getitem__ and
+    For PyTorch's needs, a "dataset" is just an onbject with a __getitem__ and
     a __len__
     """
 
     def __init__(
         self,
         x: np.ndarray[np.float32],
-        y: np.ndarray[np.uint8] | None = None,
+        y: np.ndarray[np.uint8 | np.float32] | None = None,
     ):
 
         # "examples" is less ambiguous than "samples": not the single numbers
         num_channels, num_examples = x.shape
-        assert num_channels == ds.NUM_CHANNELS
         if y is not None:
             assert len(y) == num_examples
-            assert y.min() == 0 and y.max() == ds.NUM_CLASSES - 1
-
+        
         self.x = x
         self.y = y
         self.num_examples = num_examples
@@ -70,7 +46,7 @@ class UniboINAILSessionDataset():
 
     def __data_generation(
         self, idx_example: int,
-    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8]]:
+    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
 
         # item index indicizes the second dimension because the format is
         # (num_channels, num_samples)
@@ -82,7 +58,7 @@ class UniboINAILSessionDataset():
 
     def __getitem__(
         self, idx: int,
-    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8]]:
+    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
         return self.__data_generation(idx)
 
 
@@ -99,8 +75,12 @@ def collate_x_only(
 
 
 def collate_xy_pairs(
-    minibatch: list[tuple[np.ndarray[np.float32], np.ndarray[np.uint8]]]
-) -> tuple[torch.Tensor[torch.float32], torch.Tensor[torch.uint8]]:
+    minibatch: list[
+        tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]
+    ]]
+) -> tuple[
+    torch.Tensor[torch.float32], torch.Tensor[torch.uint8 | np.float32]
+    ]:
 
     # concatenating in NumPy first should be faster
     x = np.array([xy[0] for xy in minibatch], dtype=np.float32)
@@ -109,7 +89,8 @@ def collate_xy_pairs(
 
     x = torch.tensor(x, dtype=torch.float32, requires_grad=False, device='cpu')
     # PyTorch's crossentropy wants int64 format for the target labels
-    y = torch.tensor(y, dtype=torch.int64, requires_grad=False, device='cpu')
+    # here, do not specify the type to use it for classification and regression
+    y = torch.tensor(y, requires_grad=False, device='cpu')
 
     return x, y
 
@@ -121,7 +102,7 @@ class Mode(enum.Enum):
 
 
 def dataset2dataloader(
-    dataset: UniboINAILSessionDataset,
+    dataset: EMGSessionDataset,
     mode: Mode,
 ) -> torch.utils.data.DataLoader:
 
@@ -160,14 +141,13 @@ def do_inference(
     output_scale: float = 1.0,
 ) -> tuple:
 
-    dataset = UniboINAILSessionDataset(x)
+    dataset = EMGSessionDataset(x)
     dataloader = dataset2dataloader(dataset, mode=Mode.INFERENCE)
 
     model.eval()
     model.to(DEVICE)
-
-    yout = np.zeros((0, ds.NUM_CLASSES), dtype=np.uint8)
-
+    
+    started = False
     for x_b in dataloader:
         x_b = x_b.to(DEVICE)
         with torch.no_grad():
@@ -176,12 +156,22 @@ def do_inference(
         yout_b = yout_b.detach()
         yout_b = yout_b.cpu()
         yout_b = yout_b.numpy()
-        yout = np.concatenate((yout, yout_b), axis=0)
+        if started:
+            yout = np.concatenate((yout, yout_b), axis=0)
+        else:
+            yout = yout_b
+            started = True
         del yout_b
 
     yout *= output_scale
 
     return yout
+
+
+@enum.unique
+class MLTask(enum.Enum):
+    CLASSIFICATION = 'CLASSIFICATION'
+    REGRESSION = 'REGRESSION'
 
 
 def do_training(
@@ -190,28 +180,40 @@ def do_training(
     xvalid: np.ndarray[np.float32] | None,
     yvalid: np.ndarray[np.uint8] | None,
     model: torch.nn.Module,
+    mltask: MLTask,
+    num_classes: int | None,
     criterion: torch.nn.Module | None = None,  # None as default (ugly)
     optimizer: torch.optim.Optimizer | None = None,  # None as default (ugly)
     num_epochs: int = NUM_EPOCHS,
 ) -> tuple:
 
     assert (xvalid is None) == (yvalid is None)
+    assert mltask in MLTask
+    if mltask is MLTask.CLASSIFICATION:
+        assert num_classes is not None
+    else:
+        assert num_classes is None
 
-    dataset_train = UniboINAILSessionDataset(xtrain, ytrain)
+    dataset_train = EMGSessionDataset(xtrain, ytrain)
     dataloader_train = dataset2dataloader(dataset_train, mode=Mode.TRAINING)
 
     model.to(DEVICE)
     model.train()
 
     if criterion is None:
-        class_labels_array = np.arange(ds.NUM_CLASSES, dtype=np.uint8)
-        class_weights = sklutils.class_weight.compute_class_weight(
-            class_weight='balanced', classes=class_labels_array, y=ytrain)
-        class_weights_tensor = torch.tensor(
-            class_weights, dtype=torch.float32,
-            requires_grad=False, device='cpu',
-        )
-        criterion = torch.nn.CrossEntropyLoss(weight=class_weights_tensor)
+        if mltask is MLTask.CLASSIFICATION:
+            class_labels_array = np.arange(num_classes, dtype=np.uint8)
+            class_weights = sklutils.class_weight.compute_class_weight(
+                class_weight='balanced', classes=class_labels_array, y=ytrain)
+            class_weights_tensor = torch.tensor(
+                class_weights, dtype=torch.float32,
+                requires_grad=False, device='cpu',
+            )
+            criterion = torch.nn.CrossEntropyLoss(weight=class_weights_tensor)
+        elif mltask is MLTask.REGRESSION:
+            criterion = torch.nn.MSELoss()
+        else:
+            raise NotImplementedError
         criterion.to(DEVICE)
 
     if optimizer is None:
