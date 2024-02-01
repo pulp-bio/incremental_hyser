@@ -1,7 +1,5 @@
 from __future__ import annotations
 import enum
-import os
-import random
 import time
 
 # non-torch imports
@@ -12,6 +10,7 @@ import torch
 import torch.utils.data
 
 from settings import DEVICE
+from analysis import goodness as good
 
 
 NUM_EPOCHS = 16  # epochs of floating-point training

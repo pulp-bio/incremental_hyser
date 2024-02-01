@@ -1,24 +1,5 @@
-"""
-    Author(s):
-    Marcello Zanghieri <marcello.zanghieri2@unibo.it>
-    
-    Copyright (C) 2023 University of Bologna and ETH Zurich
-    
-    Licensed under the GNU Lesser General Public License (LGPL), Version 2.1
-    (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-        https://www.gnu.org/licenses/lgpl-2.1.txt
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-"""
-
 from __future__ import annotations
+import enum
 
 # non-torch imports
 import numpy as np
@@ -27,8 +8,6 @@ from sklearn import metrics as m
 # torch imports
 import torch  # just for tensors and datatypes
 import torch.nn.functional as F
-
-from online_semg_posture_adaptation import dataset as ds
 
 
 def balanced_crossentropy_score(
@@ -44,7 +23,8 @@ def balanced_crossentropy_score(
     """
 
     # compute class weights
-    class_labels_array = np.arange(ds.NUM_CLASSES, dtype=np.uint8)
+    num_classes = yout.shape[1]
+    class_labels_array = np.arange(num_classes, dtype=np.uint8)
     class_weights = sklutils.class_weight.compute_class_weight(
         class_weight='balanced', classes=class_labels_array, y=ytrue)
 
@@ -85,13 +65,60 @@ def compute_classification_metrics(
 
     # store into a dictionary
 
-    detection_metrics = {
+    metrics_dict = {
         'balanced_crossentropy': balanced_crossentropy,
         'balanced_accuracy': balanced_accuracy,
         'accuracy': accuracy,
     }
 
-    return detection_metrics
+    return metrics_dict
+
+
+@enum.unique
+class MLTask(enum.Enum):
+    CLASSIFICATION = 'CLASSIFICATION'
+    REGRESSION = 'REGRESSION'
+
+
+def compute_regression_metrics(
+    ytrue: np.ndarray[np.float32],
+    yout: np.ndarray[np.float32],
+) -> dict:
+
+    # compute metrics' values
+
+    # RMSE
+    rmse = np.sqrt(m.mean_squared_error(ytrue, yout))
+
+    # MAE
+    mae = m.mean_absolute_error(ytrue, yout)
+
+    # store into a dictionary
+
+    metrics_dict = {
+        'rmse': rmse,
+        'rmse': mae,
+    }
+
+    return metrics_dict
+
+
+def compute_metrics(
+    ytrue: np.ndarray[np.float32],
+    yout: np.ndarray[np.float32],
+    mltask: MLTask,
+) -> dict:
+    
+    assert mltask in MLTask
+
+    if mltask is MLTask.CLASSIFICATION:
+        metrics_dict = compute_classification_metrics(ytrue, yout)
+    elif mltask is MLTask.REGRESSION:
+        metrics_dict = compute_regression_metrics(ytrue, yout)
+    else:
+        raise NotImplementedError
+
+    return metrics_dict
 
 
 def main() -> None:
