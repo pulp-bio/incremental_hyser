@@ -9,67 +9,88 @@ from online import pca as opca
 from learning.learning import do_inference
 
 
+
+def online_pca_calibration_session(
+    xcalib_std: np.ndarray[np.float32],
+    w_init: np.ndarray[np.float32],
+    beta: float,
+) -> tuple[
+    np.ndarray[np.float32],  # mean_calib
+    np.ndarray[np.float32],  # std_calib
+    np.ndarray[np.float32],  # w_calib
+]:
+
+    num_ch, num_samples = xcalib_std.shape
+    ids_samples = np.arange(num_samples)
+    gamma_scheduled = 1.0 / (1.0 + ids_samples / beta)
+
+    w_sequence, mean_calib, scale_calib = \
+        opca.oja_sga_session(xcalib_std, w_init, gamma_scheduled)
+    w_calib = w_sequence[-1]
+
+    # heuristic reordering
+    # (BioCAS code used the NON-transposed pca_train.components_)
+    w_calib = opca.reorder_w_like_reference_pca(w_calib, w_init)
+
+    mean_calib = np.expand_dims(mean_calib, axis=1)  # equiv. to online
+    scale_calib = np.expand_dims(scale_calib, axis=1)  # equiv. to online
+
+    return mean_calib, scale_calib, w_calib
+
+
+
 def calibration_experiment(
     xcalib: np.ndarray[np.float32],
-    ycalib: np.ndarray,  # dtype of classification or regression
     xvalid: np.ndarray[np.float32],
-    yvalid: np.ndarray,  # dtype of classification or regression
-    adapt_flag: bool,
     beta: float,
     stdscaler_train: StandardScaler,
-    pca_train: PCA | None,
+    pca_train: PCA,
     model: torch.nn.Module,
     output_scale: float = 1.0,
 ) -> tuple[np.ndarray, np.ndarray]:  # dtype of classification or regression
 
-    num_channels = xcalib.shape[0]
-
+    # standard scaling, always frozen
     xcalib_std = stdscaler_train.transform(xcalib.T).T
     xvalid_std = stdscaler_train.transform(xvalid.T).T
     del xcalib, xvalid
 
-    if adapt_flag:
-
-        # online PCA
-
-        W_init = opca.initialize_online_pca(
-            num_channels, opca.InitMode.CUSTOM, pca_train.components_.T)
-        num_samples_calib = xcalib_std.shape[1]
-        ids_samples = np.arange(num_samples_calib)
-        
-        # scheduling
-        gamma_scheduled = 1.0 / (1.0 + ids_samples / beta)
-        
-        W_sequence, mean_calib, scale_calib = opca.oja_sga_session(
-            xcalib_std, W_init, gamma_scheduled)
-        W_calib = W_sequence[-1]
-        W_calib = opca.reorder_w_like_reference_pca(
-            W_calib, pca_train.components_)
-
-        mean_calib = np.expand_dims(mean_calib, axis=1)
-        scale_calib = np.expand_dims(scale_calib, axis=1)
-
-        xcalib_std = (xcalib_std - mean_calib) / scale_calib
-        xvalid_std = (xvalid_std - mean_calib) / scale_calib
-        
-        # apply PCA
-
-        xcalib_pc = W_calib.T @ xcalib_std
-        xvalid_pc = W_calib.T @ xvalid_std
-
-    else:
-        # no adptation
-        xcalib_pc = pca_train.transform(xcalib_std.T).T
-        xvalid_pc = pca_train.transform(xvalid_std.T).T
+    # PCA
+    # frozen
+    xcalib_pc_froz = pca_train.transform(xcalib_std.T).T
+    xvalid_pc_froz = pca_train.transform(xvalid_std.T).T
+    # refit    
+    # ----------------------------------------------------------------------- #
+    w_init = pca_train.components_.T
+    mean_calib, scale_calib, w_calib = \
+        online_pca_calibration_session(xcalib_std, w_init, beta)
+    xcalib_pc_refit = w_calib.T @ (xcalib_std - mean_calib) / scale_calib
+    xvalid_pc_refit = w_calib.T @ (xvalid_std - mean_calib) / scale_calib
+    # ----------------------------------------------------------------------- #
 
     del xcalib_std, xvalid_std
 
     # inference
-    yout_calib = do_inference(xcalib_pc, model, output_scale)
-    yout_valid = do_inference(xvalid_pc, model, output_scale)
-    del xcalib_pc, xvalid_pc
+    # frozen
+    yout_calib_froz = do_inference(xcalib_pc_froz, model, output_scale)
+    yout_valid_froz = do_inference(xvalid_pc_froz, model, output_scale)
+    del xcalib_pc_froz, xvalid_pc_froz
+    # refit
+    yout_calib_refit = do_inference(xcalib_pc_refit, model, output_scale)
+    yout_valid_refit = do_inference(xvalid_pc_refit, model, output_scale)
+    del xcalib_pc_refit, xvalid_pc_refit
 
-    return yout_calib, yout_valid
+    yout_dict = {
+        'calibration': {
+            'frozen': yout_calib_froz,
+            'refit': yout_calib_refit,
+        },
+        'validation': {
+            'frozen': yout_valid_froz,
+            'refit': yout_valid_refit,
+        },
+    }
+
+    return yout_dict
 
 
 def main() -> None:
