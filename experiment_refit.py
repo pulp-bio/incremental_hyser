@@ -18,7 +18,7 @@ from ztbiocas import protocol
 # %%
 NUM_REPETITIONS = 1
 
-DOWNSAMPLING_FACTOR = 10  # 1
+DOWNSAMPLING_FACTOR = 1
 
 NUM_CALIB_REPETITIONS = 5
 
@@ -194,7 +194,7 @@ for idx_repetition, idx_subject, idx_day, idx_ref_posture in itertools.product(
             ycalib=ycalib,
             xvalid=xvalid,
             yvalid=yvalid,
-            beta=0.1,
+            beta=0.01,
             stdscaler_train=stdscaler_train,
             pca_train=pca_train,
             model=mlp,
