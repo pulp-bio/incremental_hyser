@@ -194,7 +194,7 @@ for idx_repetition, idx_subject, idx_day, idx_ref_posture in itertools.product(
             ycalib=ycalib,
             xvalid=xvalid,
             yvalid=yvalid,
-            beta=0.01,
+            beta=0.1,
             stdscaler_train=stdscaler_train,
             pca_train=pca_train,
             model=mlp,
