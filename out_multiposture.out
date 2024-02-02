@@ -15,3 +15,4579 @@ EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
 
 1/4		0.3015	0.8840		none	none		5.6
 2/4		0.2468	0.9058		none	none		5.1
+3/4		0.2405	0.9093		none	none		5.2
+4/4		0.2357	0.9116		none	none		5.1
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1907656043767929, 'balanced_accuracy': 0.9255448928779195, 'accuracy': 0.9401997139711187}
+On validation repetitions:
+{'balanced_crossentropy': 0.24698831140995026, 'balanced_accuracy': 0.9145381509928222, 'accuracy': 0.9285992731662538}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.16838037967681885, 'balanced_accuracy': 0.9412514379232227, 'accuracy': 0.9345741243375986}
+On validation repetitions:
+{'balanced_crossentropy': 0.325981467962265, 'balanced_accuracy': 0.9055307286300308, 'accuracy': 0.914161067499697}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.21310018002986908, 'balanced_accuracy': 0.9239468031063791, 'accuracy': 0.9229388760914984}
+On validation repetitions:
+{'balanced_crossentropy': 0.23158307373523712, 'balanced_accuracy': 0.9164679925882407, 'accuracy': 0.9279817708333333}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3432224988937378, 'balanced_accuracy': 0.868366461390114, 'accuracy': 0.8962401140930896}
+On validation repetitions:
+{'balanced_crossentropy': 0.5817074775695801, 'balanced_accuracy': 0.826719128696216, 'accuracy': 0.8810446353463}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4483	0.8250		none	none		5.3
+2/4		0.4009	0.8507		none	none		4.9
+3/4		0.3928	0.8510		none	none		4.8
+4/4		0.3844	0.8611		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.40265485644340515, 'balanced_accuracy': 0.844039837956668, 'accuracy': 0.891551367322235}
+On validation repetitions:
+{'balanced_crossentropy': 0.4569355845451355, 'balanced_accuracy': 0.7949532086956389, 'accuracy': 0.8756946948315948}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.43407532572746277, 'balanced_accuracy': 0.8255866379693032, 'accuracy': 0.8854320795369001}
+On validation repetitions:
+{'balanced_crossentropy': 0.7085232138633728, 'balanced_accuracy': 0.7160540268322073, 'accuracy': 0.8272647095880056}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4130714237689972, 'balanced_accuracy': 0.8676872609805891, 'accuracy': 0.8769228755089483}
+On validation repetitions:
+{'balanced_crossentropy': 0.4250430762767792, 'balanced_accuracy': 0.8192613280270854, 'accuracy': 0.8613440874621506}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.28165245056152344, 'balanced_accuracy': 0.912461920802342, 'accuracy': 0.9318444462361257}
+On validation repetitions:
+{'balanced_crossentropy': 0.5499010682106018, 'balanced_accuracy': 0.7537130818692835, 'accuracy': 0.8405690077344631}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3901	0.8215		none	none		5.2
+2/4		0.3608	0.8421		none	none		4.8
+3/4		0.3546	0.8478		none	none		4.8
+4/4		0.3512	0.8471		none	none		4.7
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2776433229446411, 'balanced_accuracy': 0.8952827582523892, 'accuracy': 0.931753302794928}
+On validation repetitions:
+{'balanced_crossentropy': 0.770610511302948, 'balanced_accuracy': 0.8147504972972036, 'accuracy': 0.8795329889770488}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3692772686481476, 'balanced_accuracy': 0.8267978306059981, 'accuracy': 0.8847294778568241}
+On validation repetitions:
+{'balanced_crossentropy': 0.5837072134017944, 'balanced_accuracy': 0.6944429707753303, 'accuracy': 0.7985609593604264}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3304843306541443, 'balanced_accuracy': 0.8633907793148453, 'accuracy': 0.9127177769278451}
+On validation repetitions:
+{'balanced_crossentropy': 0.4610196053981781, 'balanced_accuracy': 0.791957743402473, 'accuracy': 0.8745012326225633}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.43184471130371094, 'balanced_accuracy': 0.7995623701687703, 'accuracy': 0.8763550499087689}
+On validation repetitions:
+{'balanced_crossentropy': 0.5420506000518799, 'balanced_accuracy': 0.713706118342777, 'accuracy': 0.8273067412384615}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4076	0.8368		none	none		5.2
+2/4		0.3738	0.8482		none	none		4.8
+3/4		0.3691	0.8543		none	none		4.8
+4/4		0.3658	0.8530		none	none		4.7
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4287864565849304, 'balanced_accuracy': 0.8356389254495243, 'accuracy': 0.8922474486717}
+On validation repetitions:
+{'balanced_crossentropy': 0.9267908930778503, 'balanced_accuracy': 0.6596374157243111, 'accuracy': 0.7910505138522258}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.37436601519584656, 'balanced_accuracy': 0.8236439484558575, 'accuracy': 0.8910265746858573}
+On validation repetitions:
+{'balanced_crossentropy': 0.4516652524471283, 'balanced_accuracy': 0.8036835370062936, 'accuracy': 0.8737411833207617}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.31237131357192993, 'balanced_accuracy': 0.885669971224225, 'accuracy': 0.9191327783752207}
+On validation repetitions:
+{'balanced_crossentropy': 0.2709346115589142, 'balanced_accuracy': 0.907779615816902, 'accuracy': 0.930923062302293}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.34518828988075256, 'balanced_accuracy': 0.8675445271547373, 'accuracy': 0.9014820696043403}
+On validation repetitions:
+{'balanced_crossentropy': 0.49517345428466797, 'balanced_accuracy': 0.8131723659226958, 'accuracy': 0.8678776316319813}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3313	0.8654		none	none		6.5
+2/4		0.2880	0.8820		none	none		5.1
+3/4		0.2765	0.8879		none	none		5.0
+4/4		0.2690	0.8920		none	none		5.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.21030078828334808, 'balanced_accuracy': 0.9160447214067805, 'accuracy': 0.9418437410107933}
+On validation repetitions:
+{'balanced_crossentropy': 0.24451695382595062, 'balanced_accuracy': 0.9121674525300009, 'accuracy': 0.9474180074743266}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3041665852069855, 'balanced_accuracy': 0.8884832207367332, 'accuracy': 0.931123763558438}
+On validation repetitions:
+{'balanced_crossentropy': 0.4176241159439087, 'balanced_accuracy': 0.8102587928733365, 'accuracy': 0.8942176336182405}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2731032073497772, 'balanced_accuracy': 0.8792633104659977, 'accuracy': 0.9206856625050343}
+On validation repetitions:
+{'balanced_crossentropy': 0.3143347203731537, 'balanced_accuracy': 0.8506032301200595, 'accuracy': 0.9100836376487219}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.285437673330307, 'balanced_accuracy': 0.884862145537291, 'accuracy': 0.9182363629233605}
+On validation repetitions:
+{'balanced_crossentropy': 0.35965728759765625, 'balanced_accuracy': 0.8652518875413527, 'accuracy': 0.915885828788724}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4164	0.8207		none	none		5.2
+2/4		0.3816	0.8223		none	none		4.9
+3/4		0.3699	0.8267		none	none		4.9
+4/4		0.3582	0.8340		none	none		4.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.296580970287323, 'balanced_accuracy': 0.8755001220603186, 'accuracy': 0.9160534944362688}
+On validation repetitions:
+{'balanced_crossentropy': 0.41185176372528076, 'balanced_accuracy': 0.8871067270555543, 'accuracy': 0.932438385128736}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.368279367685318, 'balanced_accuracy': 0.8326046131269772, 'accuracy': 0.8904810777805204}
+On validation repetitions:
+{'balanced_crossentropy': 0.3272334337234497, 'balanced_accuracy': 0.8851779384155991, 'accuracy': 0.927169109370742}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.45349931716918945, 'balanced_accuracy': 0.756357053594773, 'accuracy': 0.8388264979278066}
+On validation repetitions:
+{'balanced_crossentropy': 0.2773073613643646, 'balanced_accuracy': 0.9194935329657556, 'accuracy': 0.9387694869875937}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.31177958846092224, 'balanced_accuracy': 0.8741825997343833, 'accuracy': 0.8995515344301619}
+On validation repetitions:
+{'balanced_crossentropy': 0.3851333558559418, 'balanced_accuracy': 0.8793072810983564, 'accuracy': 0.9089116032996485}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3721	0.8475		none	none		6.3
+2/4		0.3119	0.8805		none	none		5.8
+3/4		0.2969	0.8861		none	none		5.8
+4/4		0.2898	0.8851		none	none		5.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17411935329437256, 'balanced_accuracy': 0.9602659602454536, 'accuracy': 0.9564626202716877}
+On validation repetitions:
+{'balanced_crossentropy': 0.2000126987695694, 'balanced_accuracy': 0.9386054038314059, 'accuracy': 0.9490423605890885}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4105193614959717, 'balanced_accuracy': 0.7884833591587471, 'accuracy': 0.8673652064026959}
+On validation repetitions:
+{'balanced_crossentropy': 0.5001075267791748, 'balanced_accuracy': 0.7433579942043034, 'accuracy': 0.8581506477035964}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2992403209209442, 'balanced_accuracy': 0.8955706397285391, 'accuracy': 0.9105142219164211}
+On validation repetitions:
+{'balanced_crossentropy': 0.38336217403411865, 'balanced_accuracy': 0.8289394295696052, 'accuracy': 0.8900977591642104}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2645772695541382, 'balanced_accuracy': 0.9031734119114797, 'accuracy': 0.919542173375821}
+On validation repetitions:
+{'balanced_crossentropy': 0.30672889947891235, 'balanced_accuracy': 0.8816627951069904, 'accuracy': 0.9151917323905358}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.1487	0.9540		none	none		5.4
+2/4		0.1193	0.9599		none	none		5.0
+3/4		0.1163	0.9594		none	none		4.9
+4/4		0.1139	0.9602		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.14759202301502228, 'balanced_accuracy': 0.94961335594635, 'accuracy': 0.9510373658801755}
+On validation repetitions:
+{'balanced_crossentropy': 0.3567696213722229, 'balanced_accuracy': 0.8716762512630768, 'accuracy': 0.9273202122278037}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.08963122218847275, 'balanced_accuracy': 0.9661178665313995, 'accuracy': 0.9626043061708046}
+On validation repetitions:
+{'balanced_crossentropy': 0.2933337986469269, 'balanced_accuracy': 0.9197618942154623, 'accuracy': 0.9464487636278296}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.13772927224636078, 'balanced_accuracy': 0.9491101383284275, 'accuracy': 0.9560764049091077}
+On validation repetitions:
+{'balanced_crossentropy': 0.3719852566719055, 'balanced_accuracy': 0.8782426171257085, 'accuracy': 0.9262687556424057}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.07824788242578506, 'balanced_accuracy': 0.9763125996876442, 'accuracy': 0.9605791101229267}
+On validation repetitions:
+{'balanced_crossentropy': 0.19894014298915863, 'balanced_accuracy': 0.942050230234082, 'accuracy': 0.9446712229712393}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2076	0.9138		none	none		5.2
+2/4		0.1896	0.9201		none	none		4.8
+3/4		0.1856	0.9244		none	none		4.9
+4/4		0.1839	0.9258		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17239663004875183, 'balanced_accuracy': 0.9322330282999353, 'accuracy': 0.9546500027711577}
+On validation repetitions:
+{'balanced_crossentropy': 0.28252479434013367, 'balanced_accuracy': 0.9020913258651299, 'accuracy': 0.9431360067897305}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22657518088817596, 'balanced_accuracy': 0.8994460886566462, 'accuracy': 0.9342770475227502}
+On validation repetitions:
+{'balanced_crossentropy': 0.281471312046051, 'balanced_accuracy': 0.8709958783893929, 'accuracy': 0.9102448558553667}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.20241880416870117, 'balanced_accuracy': 0.9229040586917479, 'accuracy': 0.9460659353249506}
+On validation repetitions:
+{'balanced_crossentropy': 0.31496545672416687, 'balanced_accuracy': 0.8689258733643904, 'accuracy': 0.9150983366818375}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1369093954563141, 'balanced_accuracy': 0.9487370293565806, 'accuracy': 0.9682305788046681}
+On validation repetitions:
+{'balanced_crossentropy': 0.2225523591041565, 'balanced_accuracy': 0.9148185834304301, 'accuracy': 0.9498210557709514}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2571	0.8989		none	none		5.2
+2/4		0.2252	0.9053		none	none		4.8
+3/4		0.2213	0.9061		none	none		4.8
+4/4		0.2200	0.9096		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22139990329742432, 'balanced_accuracy': 0.9044280511948659, 'accuracy': 0.9402277616402728}
+On validation repetitions:
+{'balanced_crossentropy': 0.27056044340133667, 'balanced_accuracy': 0.8734019055101142, 'accuracy': 0.9282229320952782}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.28100186586380005, 'balanced_accuracy': 0.8693073102970142, 'accuracy': 0.9124665719806021}
+On validation repetitions:
+{'balanced_crossentropy': 0.26393353939056396, 'balanced_accuracy': 0.8630173867831116, 'accuracy': 0.9073833133329122}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18009181320667267, 'balanced_accuracy': 0.9400151596242138, 'accuracy': 0.9456390922931922}
+On validation repetitions:
+{'balanced_crossentropy': 0.30385157465934753, 'balanced_accuracy': 0.9087903976902635, 'accuracy': 0.9342192781224125}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18645113706588745, 'balanced_accuracy': 0.9313609345756307, 'accuracy': 0.9561649266552135}
+On validation repetitions:
+{'balanced_crossentropy': 0.371610164642334, 'balanced_accuracy': 0.8291187447227678, 'accuracy': 0.9042763713589305}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3400	0.8405		none	none		5.4
+2/4		0.2937	0.8625		none	none		5.1
+3/4		0.2810	0.8783		none	none		5.2
+4/4		0.2719	0.8845		none	none		5.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24929532408714294, 'balanced_accuracy': 0.9126885657083404, 'accuracy': 0.94166107864738}
+On validation repetitions:
+{'balanced_crossentropy': 0.33014416694641113, 'balanced_accuracy': 0.8731501385914235, 'accuracy': 0.9237535038735736}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24716000258922577, 'balanced_accuracy': 0.9167167749609942, 'accuracy': 0.9470295999583832}
+On validation repetitions:
+{'balanced_crossentropy': 0.5161845088005066, 'balanced_accuracy': 0.7647000694256407, 'accuracy': 0.8696504250263345}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3949102759361267, 'balanced_accuracy': 0.7936871527022875, 'accuracy': 0.87494745691467}
+On validation repetitions:
+{'balanced_crossentropy': 0.3398721218109131, 'balanced_accuracy': 0.8409101862038902, 'accuracy': 0.908883039806506}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2020145058631897, 'balanced_accuracy': 0.9135587581541081, 'accuracy': 0.9331270995963942}
+On validation repetitions:
+{'balanced_crossentropy': 0.2732931077480316, 'balanced_accuracy': 0.8688251766495899, 'accuracy': 0.9155877959349962}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4029	0.8333		none	none		5.7
+2/4		0.3743	0.8434		none	none		5.2
+3/4		0.3705	0.8421		none	none		5.2
+4/4		0.3661	0.8453		none	none		5.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.27138641476631165, 'balanced_accuracy': 0.8903523631324628, 'accuracy': 0.9045372218312703}
+On validation repetitions:
+{'balanced_crossentropy': 0.2387174516916275, 'balanced_accuracy': 0.8973145077344903, 'accuracy': 0.9080110050169931}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3864981532096863, 'balanced_accuracy': 0.8265322634280722, 'accuracy': 0.8376640469296431}
+On validation repetitions:
+{'balanced_crossentropy': 0.5659656524658203, 'balanced_accuracy': 0.7695911140974392, 'accuracy': 0.8311363465819556}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.35029444098472595, 'balanced_accuracy': 0.8456623007570462, 'accuracy': 0.8622660220652039}
+On validation repetitions:
+{'balanced_crossentropy': 0.46392855048179626, 'balanced_accuracy': 0.7910119543229848, 'accuracy': 0.8299568412172489}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4349488914012909, 'balanced_accuracy': 0.8248022700519023, 'accuracy': 0.8856191274963838}
+On validation repetitions:
+{'balanced_crossentropy': 0.4863229990005493, 'balanced_accuracy': 0.81357674503788, 'accuracy': 0.877696725128046}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2889	0.8810		none	none		5.6
+2/4		0.2519	0.8855		none	none		5.5
+3/4		0.2409	0.8907		none	none		5.3
+4/4		0.2309	0.8953		none	none		5.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1275634616613388, 'balanced_accuracy': 0.9550283138677341, 'accuracy': 0.9636904021968832}
+On validation repetitions:
+{'balanced_crossentropy': 0.15592177212238312, 'balanced_accuracy': 0.9481809429241895, 'accuracy': 0.9656542478035929}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24286623299121857, 'balanced_accuracy': 0.8790524854571496, 'accuracy': 0.9224452128405215}
+On validation repetitions:
+{'balanced_crossentropy': 0.3698475658893585, 'balanced_accuracy': 0.8590133041353739, 'accuracy': 0.9221286887397353}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3213236331939697, 'balanced_accuracy': 0.8726955137483069, 'accuracy': 0.9248291860509336}
+On validation repetitions:
+{'balanced_crossentropy': 0.30220526456832886, 'balanced_accuracy': 0.8771709571858858, 'accuracy': 0.9294119025853784}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.25143879652023315, 'balanced_accuracy': 0.8703540059459373, 'accuracy': 0.9185724185724186}
+On validation repetitions:
+{'balanced_crossentropy': 0.2714535892009735, 'balanced_accuracy': 0.9074458146181064, 'accuracy': 0.9433168878641994}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3530	0.8594		none	none		5.6
+2/4		0.3012	0.8789		none	none		5.1
+3/4		0.2912	0.8856		none	none		5.1
+4/4		0.2850	0.8842		none	none		5.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23671716451644897, 'balanced_accuracy': 0.8998293735666206, 'accuracy': 0.9317005663515101}
+On validation repetitions:
+{'balanced_crossentropy': 0.25886860489845276, 'balanced_accuracy': 0.8764456082876041, 'accuracy': 0.9204943471514077}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.28036120533943176, 'balanced_accuracy': 0.9101981344786717, 'accuracy': 0.9334849962084282}
+On validation repetitions:
+{'balanced_crossentropy': 0.6396468281745911, 'balanced_accuracy': 0.7803393690556358, 'accuracy': 0.8639364319614935}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3757183253765106, 'balanced_accuracy': 0.8175612030333123, 'accuracy': 0.8928762982105417}
+On validation repetitions:
+{'balanced_crossentropy': 0.6218956112861633, 'balanced_accuracy': 0.7073659152902946, 'accuracy': 0.8351865973162764}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2689568102359772, 'balanced_accuracy': 0.8968514178501219, 'accuracy': 0.9350173897126122}
+On validation repetitions:
+{'balanced_crossentropy': 0.4508667290210724, 'balanced_accuracy': 0.7988905930515312, 'accuracy': 0.8887902245043723}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2925	0.8850		none	none		5.4
+2/4		0.2565	0.8956		none	none		5.1
+3/4		0.2537	0.8974		none	none		5.0
+4/4		0.2474	0.8990		none	none		5.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.30255573987960815, 'balanced_accuracy': 0.8682924646597731, 'accuracy': 0.9210615418743944}
+On validation repetitions:
+{'balanced_crossentropy': 0.39497819542884827, 'balanced_accuracy': 0.8180596059894278, 'accuracy': 0.9064429366098172}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23455579578876495, 'balanced_accuracy': 0.8944980439780174, 'accuracy': 0.9264296795591933}
+On validation repetitions:
+{'balanced_crossentropy': 0.2286614030599594, 'balanced_accuracy': 0.9093229560247306, 'accuracy': 0.9352903653180893}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.20406484603881836, 'balanced_accuracy': 0.9203774441471081, 'accuracy': 0.9407808014980351}
+On validation repetitions:
+{'balanced_crossentropy': 0.328695684671402, 'balanced_accuracy': 0.8985619600208162, 'accuracy': 0.9260665650890392}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22595223784446716, 'balanced_accuracy': 0.923757641562111, 'accuracy': 0.9249539714233851}
+On validation repetitions:
+{'balanced_crossentropy': 0.8766376972198486, 'balanced_accuracy': 0.7240996567505006, 'accuracy': 0.8259884678747941}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	2/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3523	0.8597		none	none		5.2
+2/4		0.3004	0.8816		none	none		4.7
+3/4		0.2827	0.8895		none	none		4.8
+4/4		0.2770	0.8921		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.31286951899528503, 'balanced_accuracy': 0.8705184694124171, 'accuracy': 0.9252055392525405}
+On validation repetitions:
+{'balanced_crossentropy': 0.4077654778957367, 'balanced_accuracy': 0.824433133821535, 'accuracy': 0.889455147452648}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.29669296741485596, 'balanced_accuracy': 0.8719234148515497, 'accuracy': 0.91114073957884}
+On validation repetitions:
+{'balanced_crossentropy': 0.5682769417762756, 'balanced_accuracy': 0.7525146832576931, 'accuracy': 0.8607308531926505}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.25542527437210083, 'balanced_accuracy': 0.9096844731461841, 'accuracy': 0.9312944107590029}
+On validation repetitions:
+{'balanced_crossentropy': 0.41717106103897095, 'balanced_accuracy': 0.8398402144070726, 'accuracy': 0.890192760447322}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22417525947093964, 'balanced_accuracy': 0.9249615998362671, 'accuracy': 0.9287768739105171}
+On validation repetitions:
+{'balanced_crossentropy': 0.30029335618019104, 'balanced_accuracy': 0.9031433269615033, 'accuracy': 0.9173805573426337}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.5346	0.7909		none	none		6.2
+2/4		0.4743	0.8176		none	none		5.9
+3/4		0.4599	0.8223		none	none		5.8
+4/4		0.4608	0.8178		none	none		5.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4608086347579956, 'balanced_accuracy': 0.8141286357606115, 'accuracy': 0.8786861282942123}
+On validation repetitions:
+{'balanced_crossentropy': 0.43938761949539185, 'balanced_accuracy': 0.8586705695740368, 'accuracy': 0.9040376569037657}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5377019047737122, 'balanced_accuracy': 0.7933392854537201, 'accuracy': 0.8639687957094101}
+On validation repetitions:
+{'balanced_crossentropy': 0.5735552906990051, 'balanced_accuracy': 0.7690882513189172, 'accuracy': 0.8592041934715273}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.33731809258461, 'balanced_accuracy': 0.8762039797188806, 'accuracy': 0.9073505690474056}
+On validation repetitions:
+{'balanced_crossentropy': 1.2891292572021484, 'balanced_accuracy': 0.521742346868145, 'accuracy': 0.7090878049270385}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5135065317153931, 'balanced_accuracy': 0.7858666781684899, 'accuracy': 0.8554682311268541}
+On validation repetitions:
+{'balanced_crossentropy': 0.8003196120262146, 'balanced_accuracy': 0.6758524137600527, 'accuracy': 0.8144162576355213}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.6025	0.7491		none	none		6.8
+2/4		0.5690	0.7606		none	none		6.1
+3/4		0.5627	0.7595		none	none		6.2
+4/4		0.5542	0.7706		none	none		6.1
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.44073790311813354, 'balanced_accuracy': 0.7943515557125719, 'accuracy': 0.8634128290274519}
+On validation repetitions:
+{'balanced_crossentropy': 0.8296606540679932, 'balanced_accuracy': 0.6679957542313737, 'accuracy': 0.7992565417514086}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4164344072341919, 'balanced_accuracy': 0.8826060674700225, 'accuracy': 0.906201592373937}
+On validation repetitions:
+{'balanced_crossentropy': 1.0760310888290405, 'balanced_accuracy': 0.6945321023308773, 'accuracy': 0.7898732334314327}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7043050527572632, 'balanced_accuracy': 0.6884805482904582, 'accuracy': 0.8010575455209186}
+On validation repetitions:
+{'balanced_crossentropy': 0.937803328037262, 'balanced_accuracy': 0.6351940891366703, 'accuracy': 0.7786957535454702}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6468586921691895, 'balanced_accuracy': 0.7125369654098276, 'accuracy': 0.8108898696500051}
+On validation repetitions:
+{'balanced_crossentropy': 0.7634292244911194, 'balanced_accuracy': 0.7536406108354106, 'accuracy': 0.831114376036912}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.7067	0.7255		none	none		5.8
+2/4		0.6665	0.7278		none	none		5.2
+3/4		0.6562	0.7356		none	none		5.2
+4/4		0.6508	0.7368		none	none		5.4
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5963442921638489, 'balanced_accuracy': 0.7802131221195171, 'accuracy': 0.8571145068465965}
+On validation repetitions:
+{'balanced_crossentropy': 0.6327361464500427, 'balanced_accuracy': 0.7868061522193806, 'accuracy': 0.8774062253261123}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5189725160598755, 'balanced_accuracy': 0.7813692342406843, 'accuracy': 0.8557482435470034}
+On validation repetitions:
+{'balanced_crossentropy': 0.8885198831558228, 'balanced_accuracy': 0.6761941852363097, 'accuracy': 0.8187623232212025}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.8700831532478333, 'balanced_accuracy': 0.6584842884865479, 'accuracy': 0.7723299223530622}
+On validation repetitions:
+{'balanced_crossentropy': 1.1061335802078247, 'balanced_accuracy': 0.5809435304060838, 'accuracy': 0.7513541039766678}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6032032370567322, 'balanced_accuracy': 0.7395520864583892, 'accuracy': 0.8423599697372883}
+On validation repetitions:
+{'balanced_crossentropy': 0.7039406895637512, 'balanced_accuracy': 0.7118804569886009, 'accuracy': 0.8372806709302598}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.8825	0.6411		none	none		4.7
+2/4		0.7934	0.6782		none	none		4.4
+3/4		0.7524	0.7013		none	none		4.4
+4/4		0.7401	0.7105		none	none		4.4
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7918650507926941, 'balanced_accuracy': 0.721103122739402, 'accuracy': 0.8366375093514415}
+On validation repetitions:
+{'balanced_crossentropy': 1.1002253293991089, 'balanced_accuracy': 0.5871723490344899, 'accuracy': 0.7871667707841963}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.8686932325363159, 'balanced_accuracy': 0.6423473156397574, 'accuracy': 0.7733649446550188}
+On validation repetitions:
+{'balanced_crossentropy': 1.2239179611206055, 'balanced_accuracy': 0.5124843683059505, 'accuracy': 0.7355112339945776}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6467040181159973, 'balanced_accuracy': 0.7403459095732753, 'accuracy': 0.8295818073911092}
+On validation repetitions:
+{'balanced_crossentropy': 1.3433867692947388, 'balanced_accuracy': 0.5864514864605446, 'accuracy': 0.7698788567343656}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6856657266616821, 'balanced_accuracy': 0.7244970645275547, 'accuracy': 0.8420017452248708}
+On validation repetitions:
+{'balanced_crossentropy': 1.0164148807525635, 'balanced_accuracy': 0.5645735672331457, 'accuracy': 0.7854513495268058}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.7007	0.7286		none	none		4.3
+2/4		0.6254	0.7532		none	none		4.0
+3/4		0.6157	0.7598		none	none		4.0
+4/4		0.6064	0.7608		none	none		4.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7610556483268738, 'balanced_accuracy': 0.664310842893321, 'accuracy': 0.7940052803230315}
+On validation repetitions:
+{'balanced_crossentropy': 1.2880263328552246, 'balanced_accuracy': 0.42812116910982145, 'accuracy': 0.7067875854615511}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6275628805160522, 'balanced_accuracy': 0.7388129253196513, 'accuracy': 0.8341112407623493}
+On validation repetitions:
+{'balanced_crossentropy': 1.191537857055664, 'balanced_accuracy': 0.5992725195629226, 'accuracy': 0.7923332057660416}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6297534704208374, 'balanced_accuracy': 0.7599777752363499, 'accuracy': 0.8562052312579004}
+On validation repetitions:
+{'balanced_crossentropy': 0.8635905385017395, 'balanced_accuracy': 0.6396235039785294, 'accuracy': 0.8173655764357799}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4000338017940521, 'balanced_accuracy': 0.8816465736914774, 'accuracy': 0.9199309974449525}
+On validation repetitions:
+{'balanced_crossentropy': 0.5229339599609375, 'balanced_accuracy': 0.8240495159723494, 'accuracy': 0.9069934414911978}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.8873	0.6568		none	none		4.6
+2/4		0.8348	0.6735		none	none		3.9
+3/4		0.8142	0.6850		none	none		3.9
+4/4		0.8058	0.6849		none	none		3.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7363206744194031, 'balanced_accuracy': 0.6717709531363066, 'accuracy': 0.7954575618820094}
+On validation repetitions:
+{'balanced_crossentropy': 0.9920210838317871, 'balanced_accuracy': 0.6190454751059331, 'accuracy': 0.7910850322080829}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7548393607139587, 'balanced_accuracy': 0.7426034190183691, 'accuracy': 0.8548096039149717}
+On validation repetitions:
+{'balanced_crossentropy': 0.8746387362480164, 'balanced_accuracy': 0.6725965472956625, 'accuracy': 0.8372379938183424}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.9361591339111328, 'balanced_accuracy': 0.6305657275675633, 'accuracy': 0.7764599457231882}
+On validation repetitions:
+{'balanced_crossentropy': 0.9847777485847473, 'balanced_accuracy': 0.6324439102992173, 'accuracy': 0.803871829105474}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7954882383346558, 'balanced_accuracy': 0.6975294923448111, 'accuracy': 0.8045730214336837}
+On validation repetitions:
+{'balanced_crossentropy': 1.0343550443649292, 'balanced_accuracy': 0.5254551296988598, 'accuracy': 0.7423266189882554}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.7804	0.6611		none	none		4.3
+2/4		0.7375	0.6808		none	none		4.1
+3/4		0.7272	0.6840		none	none		3.7
+4/4		0.7255	0.6803		none	none		3.7
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6712419390678406, 'balanced_accuracy': 0.6910820009993112, 'accuracy': 0.8092198342653103}
+On validation repetitions:
+{'balanced_crossentropy': 1.0731393098831177, 'balanced_accuracy': 0.5795183418618756, 'accuracy': 0.793525394330316}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.7084736227989197, 'balanced_accuracy': 0.7337087398142539, 'accuracy': 0.8420117806977798}
+On validation repetitions:
+{'balanced_crossentropy': 0.9333820343017578, 'balanced_accuracy': 0.6368638760327687, 'accuracy': 0.808426316279441}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6308754086494446, 'balanced_accuracy': 0.7369510852834872, 'accuracy': 0.8349664031303623}
+On validation repetitions:
+{'balanced_crossentropy': 0.944909930229187, 'balanced_accuracy': 0.6485446025474316, 'accuracy': 0.8161703407087507}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.898791491985321, 'balanced_accuracy': 0.5640426017958301, 'accuracy': 0.7342468885767485}
+On validation repetitions:
+{'balanced_crossentropy': 0.975650429725647, 'balanced_accuracy': 0.5254521033406804, 'accuracy': 0.740716248585578}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	3/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.6003	0.7637		none	none		4.8
+2/4		0.5562	0.7770		none	none		4.2
+3/4		0.5491	0.7846		none	none		4.2
+4/4		0.5420	0.7852		none	none		4.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.44006237387657166, 'balanced_accuracy': 0.8340618687986846, 'accuracy': 0.890220539095567}
+On validation repetitions:
+{'balanced_crossentropy': 0.764716625213623, 'balanced_accuracy': 0.7201435248626281, 'accuracy': 0.8432400723102156}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5663006901741028, 'balanced_accuracy': 0.7654147259967942, 'accuracy': 0.8666128923842172}
+On validation repetitions:
+{'balanced_crossentropy': 0.6044566035270691, 'balanced_accuracy': 0.7625211080028222, 'accuracy': 0.8761521641962333}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.6610440015792847, 'balanced_accuracy': 0.7194690324970224, 'accuracy': 0.8170178354822768}
+On validation repetitions:
+{'balanced_crossentropy': 1.3922905921936035, 'balanced_accuracy': 0.4987240213514254, 'accuracy': 0.7337298067192244}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5058106780052185, 'balanced_accuracy': 0.8229514422204353, 'accuracy': 0.892771452955669}
+On validation repetitions:
+{'balanced_crossentropy': 0.42120254039764404, 'balanced_accuracy': 0.8527077297737518, 'accuracy': 0.9267617938264414}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3151	0.8783		none	none		6.7
+2/4		0.2665	0.9032		none	none		6.1
+3/4		0.2596	0.9078		none	none		6.0
+4/4		0.2547	0.9071		none	none		6.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.20045223832130432, 'balanced_accuracy': 0.932636507552834, 'accuracy': 0.9498901288293334}
+On validation repetitions:
+{'balanced_crossentropy': 0.2765572667121887, 'balanced_accuracy': 0.9025564200422863, 'accuracy': 0.9400310596105602}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.25824180245399475, 'balanced_accuracy': 0.8926232787052522, 'accuracy': 0.928153185544347}
+On validation repetitions:
+{'balanced_crossentropy': 0.2775114178657532, 'balanced_accuracy': 0.8901379056002083, 'accuracy': 0.9244762709602811}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.27152130007743835, 'balanced_accuracy': 0.9116628391134518, 'accuracy': 0.9349788509932002}
+On validation repetitions:
+{'balanced_crossentropy': 0.6960246562957764, 'balanced_accuracy': 0.8143614120733922, 'accuracy': 0.8994907255992151}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.28130701184272766, 'balanced_accuracy': 0.8965297352092616, 'accuracy': 0.9308007284133851}
+On validation repetitions:
+{'balanced_crossentropy': 0.46837317943573, 'balanced_accuracy': 0.8179767127010525, 'accuracy': 0.8897473040399163}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2547	0.9017		none	none		6.9
+2/4		0.2067	0.9236		none	none		6.3
+3/4		0.2007	0.9245		none	none		6.3
+4/4		0.1988	0.9251		none	none		6.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23497797548770905, 'balanced_accuracy': 0.9109923848399587, 'accuracy': 0.9433829348686328}
+On validation repetitions:
+{'balanced_crossentropy': 0.42281225323677063, 'balanced_accuracy': 0.8391611848201052, 'accuracy': 0.9248371495889531}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1539331078529358, 'balanced_accuracy': 0.9419957709528393, 'accuracy': 0.9543142164460872}
+On validation repetitions:
+{'balanced_crossentropy': 0.1843772828578949, 'balanced_accuracy': 0.9355484592590423, 'accuracy': 0.9570493373782533}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22095565497875214, 'balanced_accuracy': 0.9179297985995584, 'accuracy': 0.9450300169561432}
+On validation repetitions:
+{'balanced_crossentropy': 0.2750168740749359, 'balanced_accuracy': 0.8906487772859367, 'accuracy': 0.9340123667539167}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18360982835292816, 'balanced_accuracy': 0.9309467658183811, 'accuracy': 0.9483115806919412}
+On validation repetitions:
+{'balanced_crossentropy': 0.22692827880382538, 'balanced_accuracy': 0.9202728341268148, 'accuracy': 0.9470981394028541}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2469	0.9064		none	none		6.8
+2/4		0.2106	0.9192		none	none		6.4
+3/4		0.2067	0.9228		none	none		6.4
+4/4		0.2045	0.9214		none	none		6.4
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22530677914619446, 'balanced_accuracy': 0.8971767715121759, 'accuracy': 0.9223893695567151}
+On validation repetitions:
+{'balanced_crossentropy': 0.23103976249694824, 'balanced_accuracy': 0.8968621713764874, 'accuracy': 0.9354173715310835}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18770048022270203, 'balanced_accuracy': 0.9380741547359599, 'accuracy': 0.9564092170496711}
+On validation repetitions:
+{'balanced_crossentropy': 0.18069279193878174, 'balanced_accuracy': 0.9610316106534486, 'accuracy': 0.9715834414974817}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23621073365211487, 'balanced_accuracy': 0.9086921360334411, 'accuracy': 0.9322895962653783}
+On validation repetitions:
+{'balanced_crossentropy': 0.20959919691085815, 'balanced_accuracy': 0.9263956327014449, 'accuracy': 0.9523232323232323}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17537803947925568, 'balanced_accuracy': 0.9404613083913144, 'accuracy': 0.9387012689410215}
+On validation repetitions:
+{'balanced_crossentropy': 0.1790563464164734, 'balanced_accuracy': 0.9363589931061488, 'accuracy': 0.9422782645864501}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3723	0.8478		none	none		7.2
+2/4		0.3123	0.8785		none	none		6.0
+3/4		0.2930	0.8837		none	none		6.1
+4/4		0.2860	0.8841		none	none		6.4
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3282375633716583, 'balanced_accuracy': 0.8619731513892476, 'accuracy': 0.9171973172566512}
+On validation repetitions:
+{'balanced_crossentropy': 0.3450060188770294, 'balanced_accuracy': 0.8704099057603839, 'accuracy': 0.9268766048073372}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2758440375328064, 'balanced_accuracy': 0.8733267853762575, 'accuracy': 0.9200015488567501}
+On validation repetitions:
+{'balanced_crossentropy': 0.28717243671417236, 'balanced_accuracy': 0.8494428212887346, 'accuracy': 0.9164994242474092}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.29879316687583923, 'balanced_accuracy': 0.8739782598523655, 'accuracy': 0.9217792168050305}
+On validation repetitions:
+{'balanced_crossentropy': 0.3378223776817322, 'balanced_accuracy': 0.8596806857904987, 'accuracy': 0.9210254911734878}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.251571387052536, 'balanced_accuracy': 0.9213055224565726, 'accuracy': 0.9432936333242115}
+On validation repetitions:
+{'balanced_crossentropy': 0.585685133934021, 'balanced_accuracy': 0.7866700074184022, 'accuracy': 0.88110453883423}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2159	0.9248		none	none		6.7
+2/4		0.1916	0.9262		none	none		6.4
+3/4		0.1799	0.9324		none	none		6.3
+4/4		0.1752	0.9331		none	none		6.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.15340115129947662, 'balanced_accuracy': 0.9452890259715484, 'accuracy': 0.9612085244132722}
+On validation repetitions:
+{'balanced_crossentropy': 0.5577300786972046, 'balanced_accuracy': 0.8480301740395748, 'accuracy': 0.904497905097747}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.13892845809459686, 'balanced_accuracy': 0.9576655741917445, 'accuracy': 0.9683863576984143}
+On validation repetitions:
+{'balanced_crossentropy': 0.34558120369911194, 'balanced_accuracy': 0.889140961065887, 'accuracy': 0.9371382325515931}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2056661695241928, 'balanced_accuracy': 0.9132429770489011, 'accuracy': 0.9425749087936843}
+On validation repetitions:
+{'balanced_crossentropy': 0.260834664106369, 'balanced_accuracy': 0.8781963281584796, 'accuracy': 0.9279444854772497}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.19693942368030548, 'balanced_accuracy': 0.9195212088041739, 'accuracy': 0.9465417740370955}
+On validation repetitions:
+{'balanced_crossentropy': 0.2666834890842438, 'balanced_accuracy': 0.9061355728448256, 'accuracy': 0.9462701404133703}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2628	0.9029		none	none		6.7
+2/4		0.2398	0.9090		none	none		6.3
+3/4		0.2353	0.9098		none	none		6.3
+4/4		0.2326	0.9101		none	none		6.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2357414960861206, 'balanced_accuracy': 0.9081561889765323, 'accuracy': 0.9403240679752338}
+On validation repetitions:
+{'balanced_crossentropy': 0.37425535917282104, 'balanced_accuracy': 0.8539992793703615, 'accuracy': 0.9153378891419893}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.14003580808639526, 'balanced_accuracy': 0.9485089336683298, 'accuracy': 0.9656231324415023}
+On validation repetitions:
+{'balanced_crossentropy': 0.389663964509964, 'balanced_accuracy': 0.9061372438828147, 'accuracy': 0.9497703834358265}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.27052971720695496, 'balanced_accuracy': 0.8996262303855205, 'accuracy': 0.937520767865111}
+On validation repetitions:
+{'balanced_crossentropy': 0.43735969066619873, 'balanced_accuracy': 0.84384175005648, 'accuracy': 0.9138592819451964}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.29768750071525574, 'balanced_accuracy': 0.8756133299002008, 'accuracy': 0.9175138381389965}
+On validation repetitions:
+{'balanced_crossentropy': 0.34522807598114014, 'balanced_accuracy': 0.8496091148925237, 'accuracy': 0.9067354885815114}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2690	0.8922		none	none		6.9
+2/4		0.2331	0.9085		none	none		6.4
+3/4		0.2195	0.9210		none	none		6.4
+4/4		0.2136	0.9201		none	none		6.4
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.25226646661758423, 'balanced_accuracy': 0.8947484534898339, 'accuracy': 0.931322365562964}
+On validation repetitions:
+{'balanced_crossentropy': 0.3941904604434967, 'balanced_accuracy': 0.8511003878465178, 'accuracy': 0.9195940671350508}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22127355635166168, 'balanced_accuracy': 0.9259985956124962, 'accuracy': 0.9521525265254686}
+On validation repetitions:
+{'balanced_crossentropy': 0.34491363167762756, 'balanced_accuracy': 0.8605901350740462, 'accuracy': 0.9177485000526298}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17442333698272705, 'balanced_accuracy': 0.9310482437712903, 'accuracy': 0.9521197288097448}
+On validation repetitions:
+{'balanced_crossentropy': 0.2567887604236603, 'balanced_accuracy': 0.9096854815040816, 'accuracy': 0.9512750634193847}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.19929899275302887, 'balanced_accuracy': 0.931978713588005, 'accuracy': 0.9558936269775685}
+On validation repetitions:
+{'balanced_crossentropy': 0.23805853724479675, 'balanced_accuracy': 0.9195255985382599, 'accuracy': 0.9548380795806917}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	4/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3295	0.8832		none	none		6.6
+2/4		0.2721	0.9087		none	none		6.2
+3/4		0.2584	0.9061		none	none		6.2
+4/4		0.2574	0.9089		none	none		6.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.339192658662796, 'balanced_accuracy': 0.8689815937232269, 'accuracy': 0.9097758756616736}
+On validation repetitions:
+{'balanced_crossentropy': 0.40774810314178467, 'balanced_accuracy': 0.8544250997858626, 'accuracy': 0.9031295118429781}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.34436988830566406, 'balanced_accuracy': 0.8915623332085166, 'accuracy': 0.9284518641185159}
+On validation repetitions:
+{'balanced_crossentropy': 0.6962384581565857, 'balanced_accuracy': 0.7521856833317152, 'accuracy': 0.870586915228699}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17635729908943176, 'balanced_accuracy': 0.942163179975252, 'accuracy': 0.9594448149383128}
+On validation repetitions:
+{'balanced_crossentropy': 0.3704502284526825, 'balanced_accuracy': 0.8643698337961169, 'accuracy': 0.924132198906088}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.16185449063777924, 'balanced_accuracy': 0.9356492336384267, 'accuracy': 0.9542135077952087}
+On validation repetitions:
+{'balanced_crossentropy': 0.28273484110832214, 'balanced_accuracy': 0.8884880156346396, 'accuracy': 0.9361416183734089}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.0954	0.9733		none	none		4.6
+2/4		0.0755	0.9777		none	none		4.2
+3/4		0.0699	0.9769		none	none		4.2
+4/4		0.0679	0.9783		none	none		4.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.0352289043366909, 'balanced_accuracy': 0.9915443522462987, 'accuracy': 0.9756322501621154}
+On validation repetitions:
+{'balanced_crossentropy': 0.07353881746530533, 'balanced_accuracy': 0.9712819546173668, 'accuracy': 0.973545266987599}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1210254579782486, 'balanced_accuracy': 0.9506493612277703, 'accuracy': 0.9516889238020424}
+On validation repetitions:
+{'balanced_crossentropy': 0.9156510829925537, 'balanced_accuracy': 0.8263235415803104, 'accuracy': 0.8898385060144879}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.04674398526549339, 'balanced_accuracy': 0.988582869200978, 'accuracy': 0.9704881162239377}
+On validation repetitions:
+{'balanced_crossentropy': 0.04925425723195076, 'balanced_accuracy': 0.9864992063174176, 'accuracy': 0.9683733388276502}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.06763011962175369, 'balanced_accuracy': 0.9826288181687395, 'accuracy': 0.9618182366967493}
+On validation repetitions:
+{'balanced_crossentropy': 0.5141091346740723, 'balanced_accuracy': 0.8546198949402449, 'accuracy': 0.9074159761073487}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.1959	0.9448		none	none		4.6
+2/4		0.1301	0.9593		none	none		3.9
+3/4		0.1110	0.9671		none	none		3.9
+4/4		0.1034	0.9700		none	none		3.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.14935307204723358, 'balanced_accuracy': 0.9667768443652296, 'accuracy': 0.9301224674443404}
+On validation repetitions:
+{'balanced_crossentropy': 0.18926577270030975, 'balanced_accuracy': 0.9429309991719718, 'accuracy': 0.9211747205325714}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.08380229026079178, 'balanced_accuracy': 0.9752934035137136, 'accuracy': 0.9628385865025655}
+On validation repetitions:
+{'balanced_crossentropy': 0.2888410985469818, 'balanced_accuracy': 0.864419263914927, 'accuracy': 0.8986721710465511}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.09622543305158615, 'balanced_accuracy': 0.9642711193518473, 'accuracy': 0.9553349875930521}
+On validation repetitions:
+{'balanced_crossentropy': 0.14276337623596191, 'balanced_accuracy': 0.9445757307097468, 'accuracy': 0.9483805369720905}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.0842399001121521, 'balanced_accuracy': 0.9737952870986323, 'accuracy': 0.9642764015645372}
+On validation repetitions:
+{'balanced_crossentropy': 0.09390509873628616, 'balanced_accuracy': 0.9673681415810615, 'accuracy': 0.9601086689587426}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.1758	0.9444		none	none		4.2
+2/4		0.1363	0.9577		none	none		3.9
+3/4		0.1276	0.9608		none	none		3.9
+4/4		0.1229	0.9608		none	none		3.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.12352754920721054, 'balanced_accuracy': 0.9668522283766556, 'accuracy': 0.9618187480535658}
+On validation repetitions:
+{'balanced_crossentropy': 0.1635112315416336, 'balanced_accuracy': 0.9348657369076072, 'accuracy': 0.945571749713418}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.12955377995967865, 'balanced_accuracy': 0.9545865030334167, 'accuracy': 0.9554566840544134}
+On validation repetitions:
+{'balanced_crossentropy': 0.3030621111392975, 'balanced_accuracy': 0.924763045651242, 'accuracy': 0.9391431495832724}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.14816860854625702, 'balanced_accuracy': 0.9501050760010653, 'accuracy': 0.9542124824576285}
+On validation repetitions:
+{'balanced_crossentropy': 0.30281609296798706, 'balanced_accuracy': 0.9257375983165758, 'accuracy': 0.9400488921656125}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.0951836109161377, 'balanced_accuracy': 0.9720478431640126, 'accuracy': 0.9668942399360334}
+On validation repetitions:
+{'balanced_crossentropy': 0.2775769829750061, 'balanced_accuracy': 0.9191828882303908, 'accuracy': 0.9399498072494891}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2191	0.9243		none	none		4.5
+2/4		0.1426	0.9541		none	none		4.2
+3/4		0.1279	0.9600		none	none		4.2
+4/4		0.1240	0.9594		none	none		4.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.11496621370315552, 'balanced_accuracy': 0.9674735304480534, 'accuracy': 0.9514837924212448}
+On validation repetitions:
+{'balanced_crossentropy': 0.6657567620277405, 'balanced_accuracy': 0.8143037468197982, 'accuracy': 0.8773657689803988}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1018667072057724, 'balanced_accuracy': 0.9690944052888898, 'accuracy': 0.9770170133797059}
+On validation repetitions:
+{'balanced_crossentropy': 0.12338625639677048, 'balanced_accuracy': 0.9600228355958369, 'accuracy': 0.9733830880024235}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18048807978630066, 'balanced_accuracy': 0.9319423530718601, 'accuracy': 0.923795806257118}
+On validation repetitions:
+{'balanced_crossentropy': 0.21525359153747559, 'balanced_accuracy': 0.9129316759356673, 'accuracy': 0.921964057229266}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.11738073825836182, 'balanced_accuracy': 0.9622523793156527, 'accuracy': 0.9473862446893664}
+On validation repetitions:
+{'balanced_crossentropy': 0.15878994762897491, 'balanced_accuracy': 0.9446177765622533, 'accuracy': 0.9377028451001054}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2366	0.9169		none	none		4.5
+2/4		0.1615	0.9514		none	none		4.1
+3/4		0.1531	0.9535		none	none		4.1
+4/4		0.1489	0.9538		none	none		4.1
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.0979870930314064, 'balanced_accuracy': 0.9678383348086887, 'accuracy': 0.9530612549875218}
+On validation repetitions:
+{'balanced_crossentropy': 0.1562713384628296, 'balanced_accuracy': 0.9416676348036842, 'accuracy': 0.9421791956700657}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.14560244977474213, 'balanced_accuracy': 0.9486441434537473, 'accuracy': 0.9545551363193768}
+On validation repetitions:
+{'balanced_crossentropy': 0.15105335414409637, 'balanced_accuracy': 0.963202134704002, 'accuracy': 0.960282811641955}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.10443869978189468, 'balanced_accuracy': 0.9726133244770258, 'accuracy': 0.9522770398481973}
+On validation repetitions:
+{'balanced_crossentropy': 0.08434337377548218, 'balanced_accuracy': 0.9769375946098431, 'accuracy': 0.9587949386336483}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24100357294082642, 'balanced_accuracy': 0.9277549451194137, 'accuracy': 0.9404872635890407}
+On validation repetitions:
+{'balanced_crossentropy': 0.6914645433425903, 'balanced_accuracy': 0.8794597457294028, 'accuracy': 0.9125184784040513}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2844	0.9198		none	none		5.0
+2/4		0.2321	0.9267		none	none		4.8
+3/4		0.2088	0.9306		none	none		4.7
+4/4		0.2037	0.9317		none	none		4.7
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.339020311832428, 'balanced_accuracy': 0.8706504482036125, 'accuracy': 0.9080396258436279}
+On validation repetitions:
+{'balanced_crossentropy': 0.29176193475723267, 'balanced_accuracy': 0.9277313304841464, 'accuracy': 0.9453939468752455}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.16810721158981323, 'balanced_accuracy': 0.9577981553430582, 'accuracy': 0.9598852737247885}
+On validation repetitions:
+{'balanced_crossentropy': 0.34236279129981995, 'balanced_accuracy': 0.8829968876309797, 'accuracy': 0.9171313632516781}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1435953676700592, 'balanced_accuracy': 0.9458751620067393, 'accuracy': 0.9547606934606504}
+On validation repetitions:
+{'balanced_crossentropy': 0.44376128911972046, 'balanced_accuracy': 0.8699707398584947, 'accuracy': 0.9140376605854402}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17204800248146057, 'balanced_accuracy': 0.9505081986088975, 'accuracy': 0.95710423630625}
+On validation repetitions:
+{'balanced_crossentropy': 0.33764925599098206, 'balanced_accuracy': 0.8761431115572352, 'accuracy': 0.9217483338954862}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.1824	0.9452		none	none		5.7
+2/4		0.1597	0.9525		none	none		5.0
+3/4		0.1567	0.9539		none	none		5.0
+4/4		0.1555	0.9520		none	none		5.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.19116957485675812, 'balanced_accuracy': 0.9346770525387599, 'accuracy': 0.944931485718693}
+On validation repetitions:
+{'balanced_crossentropy': 0.21825318038463593, 'balanced_accuracy': 0.9236987887561879, 'accuracy': 0.9454925909499278}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1571173071861267, 'balanced_accuracy': 0.9575035805536887, 'accuracy': 0.9644325507845761}
+On validation repetitions:
+{'balanced_crossentropy': 0.1888839304447174, 'balanced_accuracy': 0.9417114818144919, 'accuracy': 0.9554027791819724}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.13720588386058807, 'balanced_accuracy': 0.9580444780246892, 'accuracy': 0.9630933044576792}
+On validation repetitions:
+{'balanced_crossentropy': 0.6217178702354431, 'balanced_accuracy': 0.8085334360902011, 'accuracy': 0.8760631549269301}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.13714666664600372, 'balanced_accuracy': 0.9583392291149763, 'accuracy': 0.9616087280961325}
+On validation repetitions:
+{'balanced_crossentropy': 0.23346616327762604, 'balanced_accuracy': 0.9320591897908916, 'accuracy': 0.947553167023736}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	5/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2124	0.9207		none	none		5.2
+2/4		0.1738	0.9341		none	none		4.8
+3/4		0.1622	0.9378		none	none		4.8
+4/4		0.1572	0.9395		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1368739902973175, 'balanced_accuracy': 0.9501082774698545, 'accuracy': 0.9592002774221084}
+On validation repetitions:
+{'balanced_crossentropy': 0.3830081522464752, 'balanced_accuracy': 0.8794403989435398, 'accuracy': 0.927595030838546}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.15928499400615692, 'balanced_accuracy': 0.9529266143437206, 'accuracy': 0.9525399475316003}
+On validation repetitions:
+{'balanced_crossentropy': 1.5309234857559204, 'balanced_accuracy': 0.7278112160661595, 'accuracy': 0.8362317844377234}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.08684996515512466, 'balanced_accuracy': 0.9752308815608702, 'accuracy': 0.9740560344215504}
+On validation repetitions:
+{'balanced_crossentropy': 0.1393396407365799, 'balanced_accuracy': 0.9555034886553685, 'accuracy': 0.9647202391848191}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23385436832904816, 'balanced_accuracy': 0.8862878117926497, 'accuracy': 0.92619128576286}
+On validation repetitions:
+{'balanced_crossentropy': 0.4466424584388733, 'balanced_accuracy': 0.8322591178575555, 'accuracy': 0.8973039883710366}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3800	0.8608		none	none		3.0
+2/4		0.2832	0.9072		none	none		2.8
+3/4		0.2657	0.9159		none	none		2.8
+4/4		0.2605	0.9154		none	none		2.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2516874670982361, 'balanced_accuracy': 0.9280597016859038, 'accuracy': 0.9034561684596017}
+On validation repetitions:
+{'balanced_crossentropy': 0.5831667184829712, 'balanced_accuracy': 0.7565391132109475, 'accuracy': 0.8381711318645657}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.27957800030708313, 'balanced_accuracy': 0.9020468864068865, 'accuracy': 0.9147818034494734}
+On validation repetitions:
+{'balanced_crossentropy': 0.19011297821998596, 'balanced_accuracy': 0.9465637093305982, 'accuracy': 0.956344341780258}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.15290842950344086, 'balanced_accuracy': 0.9543611215048666, 'accuracy': 0.946540728572809}
+On validation repetitions:
+{'balanced_crossentropy': 0.1647505760192871, 'balanced_accuracy': 0.9552900478082228, 'accuracy': 0.9664109341757462}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.32821595668792725, 'balanced_accuracy': 0.8881717234059866, 'accuracy': 0.899024146399774}
+On validation repetitions:
+{'balanced_crossentropy': 0.36833781003952026, 'balanced_accuracy': 0.8960748546727478, 'accuracy': 0.9267979993138441}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3651	0.8595		none	none		3.3
+2/4		0.3187	0.8739		none	none		3.0
+3/4		0.3044	0.8783		none	none		3.0
+4/4		0.2947	0.8792		none	none		3.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2879682183265686, 'balanced_accuracy': 0.8866596988619121, 'accuracy': 0.9195559936570522}
+On validation repetitions:
+{'balanced_crossentropy': 0.2807374596595764, 'balanced_accuracy': 0.8726531192665833, 'accuracy': 0.9253860236968462}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.29327139258384705, 'balanced_accuracy': 0.8946461988543679, 'accuracy': 0.9228946934739618}
+On validation repetitions:
+{'balanced_crossentropy': 0.3562435507774353, 'balanced_accuracy': 0.8468989206614999, 'accuracy': 0.9135237968092917}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3459436595439911, 'balanced_accuracy': 0.8220895055186848, 'accuracy': 0.8835045946312978}
+On validation repetitions:
+{'balanced_crossentropy': 0.3317462205886841, 'balanced_accuracy': 0.8702213675326927, 'accuracy': 0.9248720002786388}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.26005324721336365, 'balanced_accuracy': 0.9038682067506892, 'accuracy': 0.9271494297987397}
+On validation repetitions:
+{'balanced_crossentropy': 0.3324539363384247, 'balanced_accuracy': 0.8568849620685755, 'accuracy': 0.9159703558921737}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.5379	0.8048		none	none		3.3
+2/4		0.4791	0.8122		none	none		3.0
+3/4		0.4633	0.8148		none	none		3.0
+4/4		0.4571	0.8182		none	none		3.0
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.45287421345710754, 'balanced_accuracy': 0.8254996709924884, 'accuracy': 0.8659930703956513}
+On validation repetitions:
+{'balanced_crossentropy': 0.5679430961608887, 'balanced_accuracy': 0.7937310783249644, 'accuracy': 0.8822677995049863}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4112599790096283, 'balanced_accuracy': 0.8601967384111143, 'accuracy': 0.8860414988351586}
+On validation repetitions:
+{'balanced_crossentropy': 0.33495062589645386, 'balanced_accuracy': 0.8986891999752884, 'accuracy': 0.9222535299951202}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.41915687918663025, 'balanced_accuracy': 0.8135945745474998, 'accuracy': 0.8682040531097135}
+On validation repetitions:
+{'balanced_crossentropy': 0.7341455817222595, 'balanced_accuracy': 0.7922285474267271, 'accuracy': 0.879150862779785}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5141769647598267, 'balanced_accuracy': 0.7905578399181659, 'accuracy': 0.8511411399615038}
+On validation repetitions:
+{'balanced_crossentropy': 0.39114490151405334, 'balanced_accuracy': 0.8619776982544579, 'accuracy': 0.9113090268113925}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4486	0.8312		none	none		3.5
+2/4		0.4068	0.8301		none	none		3.2
+3/4		0.3906	0.8312		none	none		3.3
+4/4		0.3844	0.8365		none	none		3.2
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.30245041847229004, 'balanced_accuracy': 0.8792445470160378, 'accuracy': 0.9140276644593287}
+On validation repetitions:
+{'balanced_crossentropy': 0.3190441131591797, 'balanced_accuracy': 0.873556390831744, 'accuracy': 0.9266423411145792}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2670419216156006, 'balanced_accuracy': 0.909345165326807, 'accuracy': 0.9122005778730543}
+On validation repetitions:
+{'balanced_crossentropy': 0.33785104751586914, 'balanced_accuracy': 0.8768880614701565, 'accuracy': 0.9105133172628995}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4798620045185089, 'balanced_accuracy': 0.8067914522389414, 'accuracy': 0.877546693394499}
+On validation repetitions:
+{'balanced_crossentropy': 0.6109694242477417, 'balanced_accuracy': 0.7591238311115149, 'accuracy': 0.8822026319151655}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5046326518058777, 'balanced_accuracy': 0.7462106956602614, 'accuracy': 0.8375601224311325}
+On validation repetitions:
+{'balanced_crossentropy': 0.5133852958679199, 'balanced_accuracy': 0.7289898499615313, 'accuracy': 0.8452852283499693}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4733	0.8067		none	none		3.6
+2/4		0.4344	0.8199		none	none		3.3
+3/4		0.4218	0.8278		none	none		3.3
+4/4		0.4162	0.8333		none	none		3.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.26177096366882324, 'balanced_accuracy': 0.9327862425569767, 'accuracy': 0.9437676265756}
+On validation repetitions:
+{'balanced_crossentropy': 0.28598663210868835, 'balanced_accuracy': 0.9009908024823704, 'accuracy': 0.9392003391216145}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4205899238586426, 'balanced_accuracy': 0.8047233499758913, 'accuracy': 0.8709805621793483}
+On validation repetitions:
+{'balanced_crossentropy': 0.5508331656455994, 'balanced_accuracy': 0.7542016224240454, 'accuracy': 0.867061092877296}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5537323355674744, 'balanced_accuracy': 0.7720083887465193, 'accuracy': 0.8497280318700682}
+On validation repetitions:
+{'balanced_crossentropy': 0.5873121023178101, 'balanced_accuracy': 0.7765581667203624, 'accuracy': 0.879020403363321}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.42292317748069763, 'balanced_accuracy': 0.8280905427357509, 'accuracy': 0.884266293482607}
+On validation repetitions:
+{'balanced_crossentropy': 0.7235707640647888, 'balanced_accuracy': 0.6724663794119156, 'accuracy': 0.8260208000945459}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4687	0.8194		none	none		4.1
+2/4		0.4175	0.8360		none	none		3.8
+3/4		0.4109	0.8403		none	none		3.5
+4/4		0.4080	0.8368		none	none		3.5
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.40231725573539734, 'balanced_accuracy': 0.832430785884962, 'accuracy': 0.8848779804628689}
+On validation repetitions:
+{'balanced_crossentropy': 0.40436291694641113, 'balanced_accuracy': 0.8272989231510867, 'accuracy': 0.8956507032725428}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3269895315170288, 'balanced_accuracy': 0.8870734318390623, 'accuracy': 0.9266510095344924}
+On validation repetitions:
+{'balanced_crossentropy': 0.6923236846923828, 'balanced_accuracy': 0.7267288018475387, 'accuracy': 0.8553980606509789}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4755166471004486, 'balanced_accuracy': 0.8095147309636085, 'accuracy': 0.8783390087022324}
+On validation repetitions:
+{'balanced_crossentropy': 0.47753143310546875, 'balanced_accuracy': 0.832981580225134, 'accuracy': 0.9094812002892263}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4364777207374573, 'balanced_accuracy': 0.8161169438909925, 'accuracy': 0.8710413018096906}
+On validation repetitions:
+{'balanced_crossentropy': 0.6328287720680237, 'balanced_accuracy': 0.7179314605448376, 'accuracy': 0.8179335816655092}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.5511	0.7587		none	none		3.9
+2/4		0.4977	0.7922		none	none		3.4
+3/4		0.4775	0.8043		none	none		3.4
+4/4		0.4604	0.8121		none	none		3.3
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.41450268030166626, 'balanced_accuracy': 0.8435183281544751, 'accuracy': 0.8971848684333915}
+On validation repetitions:
+{'balanced_crossentropy': 0.49629053473472595, 'balanced_accuracy': 0.7916605007222994, 'accuracy': 0.8877758670106047}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4003569185733795, 'balanced_accuracy': 0.851367283149265, 'accuracy': 0.9059490731930119}
+On validation repetitions:
+{'balanced_crossentropy': 0.45050570368766785, 'balanced_accuracy': 0.7863089698840774, 'accuracy': 0.8946495605373054}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.48755568265914917, 'balanced_accuracy': 0.8015365818143324, 'accuracy': 0.8708453112376229}
+On validation repetitions:
+{'balanced_crossentropy': 0.5111761093139648, 'balanced_accuracy': 0.8269094070818226, 'accuracy': 0.8993691262072778}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5295642614364624, 'balanced_accuracy': 0.7551437124966832, 'accuracy': 0.8163734751211419}
+On validation repetitions:
+{'balanced_crossentropy': 0.6436575651168823, 'balanced_accuracy': 0.7356700771779945, 'accuracy': 0.823609285394427}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	6/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.4572	0.7911		none	none		3.9
+2/4		0.4179	0.7981		none	none		3.6
+3/4		0.4098	0.8069		none	none		3.6
+4/4		0.4047	0.8189		none	none		3.6
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.41039732098579407, 'balanced_accuracy': 0.8035782117012903, 'accuracy': 0.8716476425077195}
+On validation repetitions:
+{'balanced_crossentropy': 0.5435171127319336, 'balanced_accuracy': 0.7373915450922678, 'accuracy': 0.857371581054036}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.5212259888648987, 'balanced_accuracy': 0.7512430797397646, 'accuracy': 0.8441464821222606}
+On validation repetitions:
+{'balanced_crossentropy': 0.7391168475151062, 'balanced_accuracy': 0.7115715544068705, 'accuracy': 0.822135871606067}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.30129313468933105, 'balanced_accuracy': 0.8728466623983177, 'accuracy': 0.9225695795169219}
+On validation repetitions:
+{'balanced_crossentropy': 0.41589638590812683, 'balanced_accuracy': 0.833077952571777, 'accuracy': 0.9090241654560507}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.4036306142807007, 'balanced_accuracy': 0.8336143672165822, 'accuracy': 0.8925075539633429}
+On validation repetitions:
+{'balanced_crossentropy': 0.7835391163825989, 'balanced_accuracy': 0.7119106934542301, 'accuracy': 0.8221477565917815}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3673	0.8770		none	none		5.1
+2/4		0.3140	0.8858		none	none		4.8
+3/4		0.3008	0.8914		none	none		4.8
+4/4		0.2919	0.8955		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3703017830848694, 'balanced_accuracy': 0.8666148632910887, 'accuracy': 0.9184088732843919}
+On validation repetitions:
+{'balanced_crossentropy': 0.40908223390579224, 'balanced_accuracy': 0.8588367776143183, 'accuracy': 0.9141495638142303}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.21038630604743958, 'balanced_accuracy': 0.9350431182640476, 'accuracy': 0.9512566241670601}
+On validation repetitions:
+{'balanced_crossentropy': 0.1827791929244995, 'balanced_accuracy': 0.9480011212707073, 'accuracy': 0.9616415927103602}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3356286883354187, 'balanced_accuracy': 0.8753842721689572, 'accuracy': 0.9058597125127641}
+On validation repetitions:
+{'balanced_crossentropy': 0.3462200164794922, 'balanced_accuracy': 0.8666012300049869, 'accuracy': 0.906686463497496}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.25190743803977966, 'balanced_accuracy': 0.9056631477733262, 'accuracy': 0.9281941716651627}
+On validation repetitions:
+{'balanced_crossentropy': 0.8673752546310425, 'balanced_accuracy': 0.8300191369733922, 'accuracy': 0.8798904433285895}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	2/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3755	0.8753		none	none		5.4
+2/4		0.3092	0.8887		none	none		4.9
+3/4		0.2964	0.8972		none	none		4.9
+4/4		0.2910	0.8992		none	none		4.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2530885636806488, 'balanced_accuracy': 0.9188164172908179, 'accuracy': 0.9309862671660425}
+On validation repetitions:
+{'balanced_crossentropy': 0.3026840388774872, 'balanced_accuracy': 0.8767404631244844, 'accuracy': 0.9194671754321442}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3042195737361908, 'balanced_accuracy': 0.8835920876152722, 'accuracy': 0.9100307963044435}
+On validation repetitions:
+{'balanced_crossentropy': 0.33340325951576233, 'balanced_accuracy': 0.8759713813854791, 'accuracy': 0.9164304741608951}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2974972724914551, 'balanced_accuracy': 0.8945882938132415, 'accuracy': 0.8859352913460028}
+On validation repetitions:
+{'balanced_crossentropy': 0.5312122106552124, 'balanced_accuracy': 0.8426446872772263, 'accuracy': 0.8898225113440148}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.3221203088760376, 'balanced_accuracy': 0.8935454969313653, 'accuracy': 0.9137990137911031}
+On validation repetitions:
+{'balanced_crossentropy': 0.41678914427757263, 'balanced_accuracy': 0.8639227304555614, 'accuracy': 0.9123073652885535}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	3/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2645	0.9083		none	none		5.3
+2/4		0.2288	0.9126		none	none		4.8
+3/4		0.2206	0.9190		none	none		4.8
+4/4		0.2155	0.9183		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.17940257489681244, 'balanced_accuracy': 0.9397966151836448, 'accuracy': 0.9481096520807712}
+On validation repetitions:
+{'balanced_crossentropy': 0.12060834467411041, 'balanced_accuracy': 0.9547304324765662, 'accuracy': 0.9636578953086634}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18838463723659515, 'balanced_accuracy': 0.9303032261528257, 'accuracy': 0.9454758342548624}
+On validation repetitions:
+{'balanced_crossentropy': 0.14070174098014832, 'balanced_accuracy': 0.9594636195779312, 'accuracy': 0.9690650101258333}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2490115463733673, 'balanced_accuracy': 0.9129982214251201, 'accuracy': 0.9317425155130646}
+On validation repetitions:
+{'balanced_crossentropy': 0.338977575302124, 'balanced_accuracy': 0.8684381001841995, 'accuracy': 0.9148771501449781}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24165251851081848, 'balanced_accuracy': 0.892926131380094, 'accuracy': 0.9188105962287197}
+On validation repetitions:
+{'balanced_crossentropy': 0.18009410798549652, 'balanced_accuracy': 0.932287729984643, 'accuracy': 0.9431074040437838}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	4/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2531	0.9139		none	none		6.2
+2/4		0.2072	0.9267		none	none		5.8
+3/4		0.2044	0.9288		none	none		5.9
+4/4		0.2031	0.9290		none	none		5.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.16006658971309662, 'balanced_accuracy': 0.954456084578594, 'accuracy': 0.960886867538374}
+On validation repetitions:
+{'balanced_crossentropy': 0.15636847913265228, 'balanced_accuracy': 0.9481628263043381, 'accuracy': 0.9604508196721312}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2020321786403656, 'balanced_accuracy': 0.9355891008397662, 'accuracy': 0.9485092419309354}
+On validation repetitions:
+{'balanced_crossentropy': 0.19755204021930695, 'balanced_accuracy': 0.9301279249545494, 'accuracy': 0.9459800741427248}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.23288071155548096, 'balanced_accuracy': 0.9130804667265081, 'accuracy': 0.9369832402234637}
+On validation repetitions:
+{'balanced_crossentropy': 0.21716506779193878, 'balanced_accuracy': 0.9063614310933953, 'accuracy': 0.9399290657010343}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22201107442378998, 'balanced_accuracy': 0.9107520096599218, 'accuracy': 0.9266366579799415}
+On validation repetitions:
+{'balanced_crossentropy': 0.1526627391576767, 'balanced_accuracy': 0.9548117472126201, 'accuracy': 0.9613818925920282}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	5/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2353	0.9185		none	none		5.7
+2/4		0.1992	0.9283		none	none		5.1
+3/4		0.1955	0.9276		none	none		4.9
+4/4		0.1898	0.9328		none	none		4.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.13977859914302826, 'balanced_accuracy': 0.9621836006473486, 'accuracy': 0.973016580963375}
+On validation repetitions:
+{'balanced_crossentropy': 0.19477345049381256, 'balanced_accuracy': 0.9035026924342923, 'accuracy': 0.9491947422726661}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1784895807504654, 'balanced_accuracy': 0.9329164872676907, 'accuracy': 0.9524298165602514}
+On validation repetitions:
+{'balanced_crossentropy': 0.30043739080429077, 'balanced_accuracy': 0.892451096123632, 'accuracy': 0.9332378125746256}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.24621109664440155, 'balanced_accuracy': 0.9186699519897222, 'accuracy': 0.9205267938237965}
+On validation repetitions:
+{'balanced_crossentropy': 0.2338009774684906, 'balanced_accuracy': 0.9120220747721198, 'accuracy': 0.9314139579018017}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.19230031967163086, 'balanced_accuracy': 0.9191158712515914, 'accuracy': 0.9261782414616423}
+On validation repetitions:
+{'balanced_crossentropy': 0.22527626156806946, 'balanced_accuracy': 0.9368238588114598, 'accuracy': 0.9466372681061824}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	6/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3369	0.9047		none	none		5.8
+2/4		0.2486	0.9204		none	none		5.0
+3/4		0.2395	0.9200		none	none		4.9
+4/4		0.2332	0.9249		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.26630911231040955, 'balanced_accuracy': 0.9014684304538177, 'accuracy': 0.9030330583879976}
+On validation repetitions:
+{'balanced_crossentropy': 0.38392511010169983, 'balanced_accuracy': 0.8572512697083009, 'accuracy': 0.902992923029732}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2229520082473755, 'balanced_accuracy': 0.949293887681462, 'accuracy': 0.924584141238902}
+On validation repetitions:
+{'balanced_crossentropy': 0.30168741941452026, 'balanced_accuracy': 0.9103746411147999, 'accuracy': 0.9102112273153763}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.22609758377075195, 'balanced_accuracy': 0.9186858755678631, 'accuracy': 0.9189600457808761}
+On validation repetitions:
+{'balanced_crossentropy': 0.4071900248527527, 'balanced_accuracy': 0.8806866458592228, 'accuracy': 0.9019255971003884}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2112228274345398, 'balanced_accuracy': 0.9322837831966124, 'accuracy': 0.9463509991311903}
+On validation repetitions:
+{'balanced_crossentropy': 0.3371061384677887, 'balanced_accuracy': 0.8864076913594819, 'accuracy': 0.934192944949225}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	7/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2201	0.9369		none	none		5.2
+2/4		0.1886	0.9461		none	none		4.9
+3/4		0.1796	0.9470		none	none		4.9
+4/4		0.1732	0.9489		none	none		4.9
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.10543964803218842, 'balanced_accuracy': 0.9635973331371993, 'accuracy': 0.9530883905352867}
+On validation repetitions:
+{'balanced_crossentropy': 0.1809109002351761, 'balanced_accuracy': 0.9329394127594596, 'accuracy': 0.9436744524220667}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.18792316317558289, 'balanced_accuracy': 0.9412076573225727, 'accuracy': 0.9593827225406173}
+On validation repetitions:
+{'balanced_crossentropy': 0.17451541125774384, 'balanced_accuracy': 0.9409205834414411, 'accuracy': 0.9649174262250699}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.20365945994853973, 'balanced_accuracy': 0.9396562390148792, 'accuracy': 0.9443301416475429}
+On validation repetitions:
+{'balanced_crossentropy': 0.17398175597190857, 'balanced_accuracy': 0.9463954498685538, 'accuracy': 0.9564934694575943}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1914975345134735, 'balanced_accuracy': 0.9524033935627095, 'accuracy': 0.9196834741389197}
+On validation repetitions:
+{'balanced_crossentropy': 0.473861962556839, 'balanced_accuracy': 0.897862930507813, 'accuracy': 0.8563117106125308}
+
+
+
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	7/7
+DAY	8/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.2625	0.9072		none	none		5.1
+2/4		0.2229	0.9258		none	none		4.8
+3/4		0.2145	0.9268		none	none		4.8
+4/4		0.2111	0.9305		none	none		4.8
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 1
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.1502593606710434, 'balanced_accuracy': 0.9541001141261617, 'accuracy': 0.9505100671140939}
+On validation repetitions:
+{'balanced_crossentropy': 0.23363202810287476, 'balanced_accuracy': 0.913929178663505, 'accuracy': 0.9360099234121971}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 2
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.2631690502166748, 'balanced_accuracy': 0.8977558097751831, 'accuracy': 0.9149679211588068}
+On validation repetitions:
+{'balanced_crossentropy': 0.34737905859947205, 'balanced_accuracy': 0.8819128600897961, 'accuracy': 0.913550820022057}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 3
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.21340186893939972, 'balanced_accuracy': 0.9454395631332434, 'accuracy': 0.9608336610302792}
+On validation repetitions:
+{'balanced_crossentropy': 0.16325850784778595, 'balanced_accuracy': 0.9568656836708097, 'accuracy': 0.970773386252136}
+
+
+
+
+--------------------------------------------------------------
+VALIDATION ON POSTURE 4
+--------------------------------------------------------------
+
+
+
+
+
+On training repetitions:
+{'balanced_crossentropy': 0.21957042813301086, 'balanced_accuracy': 0.9243187460787897, 'accuracy': 0.9360659417398244}
+On validation repetitions:
+{'balanced_crossentropy': 0.6265709400177002, 'balanced_accuracy': 0.7836223340745437, 'accuracy': 0.868721173544846}
+
+
+

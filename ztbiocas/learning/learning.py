@@ -229,7 +229,7 @@ def do_training(
         f"\n"
         f"\t\tTRAINING\t\tVALIDATION\n"
         f"\n"
-        "EPOCH\t\tLoss\tProxy\t\tLoss\tProxy\tTime (s)\n"
+        "EPOCH\t\tLoss\tProxy\t\tLoss\tProxy\t\tTime (s)\n"
     )
     for idx_epoch in range(num_epochs):
 
