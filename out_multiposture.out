@@ -1,0 +1,17 @@
+nohup: ignoring input
+
+------------------------------------------------------------------
+REPETITION	1/1
+SUBJECT	1/7
+DAY	1/8
+(all indices are one-based)
+------------------------------------------------------------------
+
+
+
+		TRAINING		VALIDATION
+
+EPOCH		Loss	Proxy		Loss	Proxy	Time (s)
+
+1/4		0.3015	0.8840		none	none		5.6
+2/4		0.2468	0.9058		none	none		5.1
