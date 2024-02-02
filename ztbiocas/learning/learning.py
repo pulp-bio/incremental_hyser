@@ -175,9 +175,9 @@ class MLTask(enum.Enum):
 
 def do_training(
     xtrain: np.ndarray[np.float32],
-    ytrain: np.ndarray[np.uint8],
+    ytrain: np.ndarray[np.uint8 | np.float32],
     xvalid: np.ndarray[np.float32] | None,
-    yvalid: np.ndarray[np.uint8] | None,
+    yvalid: np.ndarray[np.uint8 | np.float32] | None,
     model: torch.nn.Module,
     mltask: MLTask,
     num_classes: int | None,
@@ -240,6 +240,12 @@ def do_training(
             y_b = y_b.to(DEVICE)
             optimizer.zero_grad()
             yout_b = model(x_b)
+
+            # print(yout_b)
+            # print(y_b)
+            # raise TypeError
+            y_b = y_b.type(torch.int64)
+        
             loss_b = criterion(yout_b, y_b)
             loss_b.backward()
             optimizer.step()

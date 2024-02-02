@@ -32,7 +32,7 @@ def online_pca_calibration_session(
 
     # heuristic reordering
     # (BioCAS code used the NON-transposed pca_train.components_)
-    w_calib = opca.reorder_w_like_reference_pca(w_calib, w_init)
+    w_calib = opca.reorder_w_like_reference_pca(w_calib, w_init.T)
 
     mean_calib = np.expand_dims(mean_calib, axis=1)  # equiv. to online
     scale_calib = np.expand_dims(scale_calib, axis=1)  # equiv. to online

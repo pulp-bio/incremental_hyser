@@ -132,8 +132,15 @@ def oja_sga_session(
 
     for idx_sample in range(num_samples):
 
-        mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
-        scale = x[:, :idx_sample].std(axis=1)  # equivalent to online
+        if idx_sample == 0:
+            mean = 0.0
+            scale = 1.0
+        elif idx_sample == 1:
+            mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
+            scale = 1.0
+        else:
+            mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
+            scale = x[:, :idx_sample].std(axis=1)  # equivalent to online
 
         w_sequence[idx_sample + 1] = oja_sga_step(
             (x[:, idx_sample] - mean) / scale,
