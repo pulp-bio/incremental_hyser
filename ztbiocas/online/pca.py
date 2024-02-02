@@ -3,8 +3,8 @@ import enum
 
 import numpy as np
 
-#from online_semg_posture_adaptation import dataset as ds
-#from online_semg_posture_adaptation.online import covariance as cov
+from . import covariance as cov
+
 
 
 def symm_orth_no_eig(
@@ -119,10 +119,10 @@ def oja_sga_step(
 
 
 def oja_sga_session(
-    x: np.ndarray(np.float32),
-    W_init: np.ndarray(np.float32),
-    gamma_scheduled: np.ndarray(np.float32),
-) -> np.ndarray(np.float32):
+    x: np.ndarray[np.float32],
+    W_init: np.ndarray[np.float32],
+    gamma_scheduled: np.ndarray[np.float32],
+) -> np.ndarray[np.float32]:
 
     num_ch, num_samples = x.shape
 
@@ -130,17 +130,26 @@ def oja_sga_session(
         (num_samples + 1, num_ch, num_ch), dtype=np.float32)
     w_sequence[0] = W_init
 
+    mean = np.zeros(num_ch, dtype=np.float32)
+    ncov = np.zeros((num_ch, num_ch), dtype=np.float32)
+
     for idx_sample in range(num_samples):
 
+        mean, ncov, _ = cov.update_cov(
+            x[:, idx_sample], mean, ncov, idx_sample + 1)
+        scale = np.sqrt(np.diag(ncov) / (idx_sample + 1))
+        
+        '''
         if idx_sample == 0:
             mean = 0.0
             scale = 1.0
         elif idx_sample == 1:
-            mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
+            mean = x[:, :idx_sample].mean(axis=1)  # equiv. but slower
             scale = 1.0
         else:
-            mean = x[:, :idx_sample].mean(axis=1)  # equivalent to online
-            scale = x[:, :idx_sample].std(axis=1)  # equivalent to online
+            mean = x[:, :idx_sample].mean(axis=1)  # equiv. but slower
+            scale = x[:, :idx_sample].std(axis=1)  # equiv. but slower
+        '''
 
         w_sequence[idx_sample + 1] = oja_sga_step(
             (x[:, idx_sample] - mean) / scale,
