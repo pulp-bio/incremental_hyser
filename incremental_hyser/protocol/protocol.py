@@ -6,7 +6,7 @@ import numpy as np
 
 from ..hyser import hyser as hy
 from ..hyser import mvc
-from ..spikification import spikification as spk
+# from ..spikification import spikification as spk
 from ..regression import regression as rgr
 
 
