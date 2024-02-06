@@ -1,19 +1,60 @@
+#!/usr/bin/env python
+
+import sys
+import argparse
+
 from incremental_hyser.hyser import hyser as hy
 
 
+def parse_my_args(argv=None) -> argparse.Namespace:
+    
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("-i", "--input-channels", type=int, help="Number of subsampled input channels")
+    parser.add_argument("-b", "--minibatch-size", type=int, help="Mini-batch size")
+    parser.add_argument("-o", "--optimizer", type=str, choices=["sgd", "adam"], help="Optimizer: SGD or Adam")
+    parser.add_argument("-r", "--results-directory", type=str, help="Target directory of the results file")
+    args = parser.parse_args(argv)
 
-for idx_subject in range(hy.NUM_SUBJECTS):
+    return args
 
-    # load whole one-dof
-    # train on whole one-dof
-    # test on everything
 
-    # load ndof, day 1
-    # train
-    # test on everything
+def main() -> None:
 
-    # load random, day 1
-    # train
-    # test on everything
+    if __name__ != "__main__":
+        # running as a module, so add a dummy argument
+        sys.argv = ['experiment.py'] + sys.argv
 
-    # save results
+    print(sys.argv)
+    args = parse_my_args()
+    print(args)
+
+    # run_experiment(
+    #    input_channels=args.input_channels,
+    #    minibatch_size=args.minibatch_size,
+    #    optimizer_str=args.optimizer_str,
+    #    results_directory=args.results_directory,
+    # )
+
+    '''
+    for idx_subject in range(hy.NUM_SUBJECTS):
+
+        # load whole one-dof
+        # train on whole one-dof
+        # test on everything
+
+        # load ndof, day 1
+        # train
+        # test on everything
+
+        # load random, day 1
+        # train
+        # test on everything
+
+        # save results
+    '''
+
+    return
+
+
+if __name__ == "__main__":
+    main()
