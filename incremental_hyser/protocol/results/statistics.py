@@ -5,7 +5,7 @@ import numpy as np
 import scipy.stats as sstt
 
 from ...hyser import hyser as hy
-from ...regression import goodness as good
+from ...learning import goodness as good
 
 
 def load_results_dict(

@@ -1,21 +1,21 @@
 from __future__ import annotations
-import enum
+# import enum
 
 import numpy as np
 import scipy.stats as s
 from sklearn import metrics as m
 
 
-@enum.unique
-class RegressionMetric(enum.Enum):
-    MAE = 'mae'
-    RMSE = 'rmse'
-    R2 = 'r2'
-    PEARSON = 'pearson'
-    SPEARMAN = 'spearman'
+# @enum.unique
+# class RegressionMetric(enum.Enum):
+#    MAE = 'mae'
+#    RMSE = 'rmse'
+#    R2 = 'r2'
+#    PEARSON = 'pearson'
+#    SPEARMAN = 'spearman'
 
 
-def pairwise_correlation(
+def _pairwise_correlation(
     x: np.ndarray[np.float32],
     y: np.ndarray[np.float32],
     corr_type: str,
@@ -58,15 +58,15 @@ def compute_regression_metrics(
     r2 = m.r2_score(ytrue.T, ypred.T, multioutput='raw_values')
 
     # Pearson's correlation coefficient
-    pearson = pairwise_correlation(ytrue, ypred, corr_type='pearson')
+    pearson = _pairwise_correlation(ytrue, ypred, corr_type='pearson')
 
     # Spearman's rank correlation coefficient
-    spearman = pairwise_correlation(ytrue, ypred, corr_type='spearman')
+    spearman = _pairwise_correlation(ytrue, ypred, corr_type='spearman')
 
     # store into a dictionary
-    regression_metrics = {
-        'ytrue': ytrue,
-        'ypred': ypred,
+    metrics_dict = {
+        # 'ytrue': ytrue,
+        # 'ypred': ypred,
         'mae': mae,
         'rmse': rmse,
         'r2': r2,
@@ -74,12 +74,12 @@ def compute_regression_metrics(
         'spearman': spearman,
     }
 
-    return regression_metrics
+    return metrics_dict
 
 
 def main() -> None:
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

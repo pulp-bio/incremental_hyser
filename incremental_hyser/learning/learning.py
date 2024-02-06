@@ -10,29 +10,27 @@ import torch
 import torch.utils.data
 
 from .settings import DEVICE
-from ..analysis import goodness as good
+from . import goodness as good
 
 
-NUM_EPOCHS = 16  # epochs of floating-point training
-MINIBATCH_SIZE_TRAIN = 64  # minibatch size for training
+MINIBATCH_SIZE_TRAIN = 16
 MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 
 
-class EMGSessionDataset():
+class _EMGPytorchDataset():
 
     """
-    For PyTorch's needs, a "dataset" is just an object with a __getitem__ and
-    a __len__
+    For PyTorch, a "dataset" is just an object with __getitem__ and __len__
     """
 
     def __init__(
         self,
         x: np.ndarray[np.float32],
-        y: np.ndarray[np.uint8 | np.float32] | None = None,
+        y: np.ndarray[np.float32] | None = None,
     ):
 
         # "examples" is less ambiguous than "samples": not the single numbers
-        num_channels, num_examples = x.shape
+        _, num_examples = x.shape
         if y is not None:
             assert len(y) == num_examples
         
@@ -43,25 +41,22 @@ class EMGSessionDataset():
     def __len__(self) -> int:
         return self.num_examples
 
-    def __data_generation(
-        self, idx_example: int,
+    def __data_generation(self, idx_example: int,
     ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
 
-        # item index indicizes the second dimension because the format is
-        # (num_channels, num_samples)
-
-        if self.y is not None:
-            return self.x[:, idx_example], self.y[idx_example]
-        else:
+        # the format is (num_ch, num_exsamples): indicize the second dimension
+        assert idx_example <= self.num_examples
+        if self.y is None:
             return self.x[:, idx_example]
+        else:
+            return self.x[:, idx_example], self.y[idx_example]
 
-    def __getitem__(
-        self, idx: int,
-    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
+    def __getitem__(self, idx: int,
+    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.float32]]:
         return self.__data_generation(idx)
 
 
-def collate_x_only(
+def _collate_x_only(
     minibatch: list[np.ndarray[np.float32]]
 ) -> torch.Tensor[torch.float32]:
 
@@ -73,17 +68,13 @@ def collate_x_only(
     return x
 
 
-def collate_xy_pairs(
-    minibatch: list[
-        tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]
-    ]]
-) -> tuple[
-    torch.Tensor[torch.float32], torch.Tensor[torch.uint8 | np.float32]
-    ]:
+def _collate_xy_pairs(
+    minibatch: list[tuple[np.ndarray[np.float32], np.ndarray[np.float32]]]
+) -> tuple[torch.Tensor[torch.float32], torch.Tensor[torch.float32]]:
 
     # concatenating in NumPy first should be faster
     x = np.array([xy[0] for xy in minibatch], dtype=np.float32)
-    y = np.array([xy[1] for xy in minibatch], dtype=np.uint8)
+    y = np.array([xy[1] for xy in minibatch], dtype=np.float32)
     del minibatch
 
     x = torch.tensor(x, dtype=torch.float32, requires_grad=False, device='cpu')
@@ -95,24 +86,24 @@ def collate_xy_pairs(
 
 
 @enum.unique
-class Mode(enum.Enum):
+class _Mode(enum.Enum):
     TRAINING = 'TRAINING'
     INFERENCE = 'INFERENCE'
 
 
-def dataset2dataloader(
-    dataset: EMGSessionDataset,
-    mode: Mode,
+def _dataset2dataloader(
+    dataset: _EMGPytorchDataset,
+    mode: _Mode,
 ) -> torch.utils.data.DataLoader:
 
-    assert isinstance(mode, Mode)
+    assert isinstance(mode, _Mode)
 
-    if mode == Mode.TRAINING:
+    if mode == _Mode.TRAINING:
         batch_size = MINIBATCH_SIZE_TRAIN
         drop_last = True
         shuffle = True
         sampler = None
-    elif mode == Mode.INFERENCE:
+    elif mode == _Mode.INFERENCE:
         batch_size = MINIBATCH_SIZE_INFER
         drop_last = False
         shuffle = False
@@ -120,7 +111,7 @@ def dataset2dataloader(
     else:
         raise ValueError
 
-    collate_fn = collate_x_only if dataset.y is None else collate_xy_pairs
+    collate_fn = _collate_x_only if dataset.y is None else _collate_xy_pairs
 
     dataloader = torch.utils.data.DataLoader(
         dataset,  # just arg, not kwarg
@@ -140,13 +131,13 @@ def do_inference(
     output_scale: float = 1.0,
 ) -> tuple:
 
-    dataset = EMGSessionDataset(x)
-    dataloader = dataset2dataloader(dataset, mode=Mode.INFERENCE)
+    dataset = _EMGPytorchDataset(x)
+    dataloader = _dataset2dataloader(dataset, mode=_Mode.INFERENCE)
 
     model.eval()
     model.to(DEVICE)
     
-    started = False
+    first_minibatch = True
     for x_b in dataloader:
         x_b = x_b.to(DEVICE)
         with torch.no_grad():
@@ -155,22 +146,16 @@ def do_inference(
         yout_b = yout_b.detach()
         yout_b = yout_b.cpu()
         yout_b = yout_b.numpy()
-        if started:
-            yout = np.concatenate((yout, yout_b), axis=0)
-        else:
+        if first_minibatch:
             yout = yout_b
-            started = True
+            first_minibatch = False
+        else:
+            yout = np.concatenate((yout, yout_b), axis=0)
         del yout_b
 
     yout *= output_scale
 
     return yout
-
-
-@enum.unique
-class MLTask(enum.Enum):
-    CLASSIFICATION = 'CLASSIFICATION'
-    REGRESSION = 'REGRESSION'
 
 
 def do_training(
@@ -179,41 +164,25 @@ def do_training(
     xvalid: np.ndarray[np.float32] | None,
     yvalid: np.ndarray[np.uint8 | np.float32] | None,
     model: torch.nn.Module,
-    mltask: MLTask,
-    num_classes: int | None,
+    minibatch_train: int,
+    minibatch_valid: int,
+    num_epochs: int,
     criterion: torch.nn.Module | None = None,  # None as default (ugly)
     optimizer: torch.optim.Optimizer | None = None,  # None as default (ugly)
-    num_epochs: int = NUM_EPOCHS,
-) -> tuple:
+    
+) -> dict:
 
     assert (xvalid is None) == (yvalid is None)
-    assert mltask in MLTask
-    if mltask is MLTask.CLASSIFICATION:
-        assert num_classes is not None
-    else:
-        assert num_classes is None
-
-    dataset_train = EMGSessionDataset(xtrain, ytrain)
-    dataloader_train = dataset2dataloader(dataset_train, mode=Mode.TRAINING)
+    
+    dataset_train = _EMGPytorchDataset(xtrain, ytrain)
+    dataloader_train = _dataset2dataloader(dataset_train, mode=_Mode.TRAINING)
 
     model.to(DEVICE)
     model.train()
 
     if criterion is None:
-        if mltask is MLTask.CLASSIFICATION:
-            class_labels_array = np.arange(num_classes, dtype=np.uint8)
-            class_weights = sklutils.class_weight.compute_class_weight(
-                class_weight='balanced', classes=class_labels_array, y=ytrain)
-            class_weights_tensor = torch.tensor(
-                class_weights, dtype=torch.float32,
-                requires_grad=False, device='cpu',
-            )
-            criterion = torch.nn.CrossEntropyLoss(weight=class_weights_tensor)
-        elif mltask is MLTask.REGRESSION:
-            criterion = torch.nn.MSELoss()
-        else:
-            raise NotImplementedError
-        criterion.to(DEVICE)
+        criterion = torch.nn.MSELoss()
+    criterion.to(DEVICE)
 
     if optimizer is None:
         params = model.parameters()
@@ -229,7 +198,7 @@ def do_training(
         f"\n"
         f"\t\tTRAINING\t\tVALIDATION\n"
         f"\n"
-        "EPOCH\t\tLoss\tProxy\t\tLoss\tProxy\t\tTime (s)\n"
+        "EPOCH\t\tRMSE\tMAE\t\tRMSE\tMAE\t\tTime (s)\n"
     )
     for idx_epoch in range(num_epochs):
 
@@ -240,24 +209,18 @@ def do_training(
             y_b = y_b.to(DEVICE)
             optimizer.zero_grad()
             yout_b = model(x_b)
-
-            # print(yout_b)
-            # print(y_b)
-            # raise TypeError
-            y_b = y_b.type(torch.int64)
-        
             loss_b = criterion(yout_b, y_b)
             loss_b.backward()
             optimizer.step()
 
         yout_train = do_inference(xtrain, model)
-        metrics_train_epoch = good.compute_classification_metrics(
-            ytrain, yout_train)
+        metrics_train_epoch = \
+            good.compute_regression_metrics(ytrain, yout_train)
 
         if xvalid is not None and yvalid is not None:
             yout_valid = do_inference(xvalid, model)
-            metrics_valid_epoch = good.compute_classification_metrics(
-                yvalid, yout_valid)
+            metrics_valid_epoch = \
+                good.compute_regression_metrics(yvalid, yout_valid)
         else:
             yout_valid = None
             metrics_valid_epoch = None
@@ -266,44 +229,24 @@ def do_training(
         deltat_epoch_s = t_end_epoch_s - t_start_epoch_s
 
         if xvalid is not None and yvalid is not None:
-            if mltask is MLTask.CLASSIFICATION:
-                print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
-                    idx_epoch + 1,
-                    num_epochs,
-                    metrics_train_epoch['balanced_crossentropy'],
-                    metrics_train_epoch['balanced_accuracy'],
-                    metrics_valid_epoch['balanced_crossentropy'],
-                    metrics_valid_epoch['balanced_accuracy'],
-                    deltat_epoch_s,
-                ))
-            else:
-                print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
-                    idx_epoch + 1,
-                    num_epochs,
-                    metrics_train_epoch['rmse'],
-                    metrics_train_epoch['mae'],
-                    metrics_valid_epoch['rmse'],
-                    metrics_valid_epoch['mae'],
-                    deltat_epoch_s,
-                ))
+            print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
+                idx_epoch + 1,
+                num_epochs,
+                metrics_train_epoch['rmse'],
+                metrics_train_epoch['mae'],
+                metrics_valid_epoch['rmse'],
+                metrics_valid_epoch['mae'],
+                deltat_epoch_s,
+            ))
 
         else:
-            if mltask is MLTask.CLASSIFICATION:
-                print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
-                    idx_epoch + 1,
-                    num_epochs,
-                    metrics_train_epoch['balanced_crossentropy'],
-                    metrics_train_epoch['balanced_accuracy'],
-                    deltat_epoch_s,
-                ))
-            else:
-                print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
-                    idx_epoch + 1,
-                    num_epochs,
-                    metrics_train_epoch['rmse'],
-                    metrics_train_epoch['mae'],
-                    deltat_epoch_s,
-                ))
+            print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
+                idx_epoch + 1,
+                num_epochs,
+                metrics_train_epoch['rmse'],
+                metrics_train_epoch['mae'],
+                deltat_epoch_s,
+            ))
 
 
         history['epoch'][idx_epoch] = {
@@ -311,7 +254,16 @@ def do_training(
             'validation': metrics_valid_epoch,
         }
 
-    return model, history, yout_train, yout_valid
+        training_summary_dict = {
+            'model': model,
+            'ytrain': ytrain,
+            'yvalid': ytrain,
+            'yout_train': yout_train,
+            'yout_valid': yout_valid,
+            'history': history,
+        }
+
+    return training_summary_dict
 
 
 def main() -> None:
