@@ -14,7 +14,7 @@ def parse_my_args(argv=None) -> argparse.Namespace:
     parser.add_argument('-i', '--input-channels', type=int, help="Number of subsampled input channels")
     parser.add_argument('-b', '--minibatch-size', type=int, help="Mini-batch size")
     parser.add_argument('-o', '--optimizer', type=str, choices=['sgd', 'adam'], help="Optimizer: SGD or Adam")
-    # parser.add_argument('-r', '--results-directory', type=str, help="Target directory of the results file")
+    parser.add_argument('-d', '--results-directory', type=str, help="Destination directory of the results file")
     parser.add_argument('-f', '--results-filename', type=str, help="Name of the results file")
     args = parser.parse_args(argv)
 
@@ -35,11 +35,13 @@ def main() -> None:
     input_channels = args['input_channels']
     minibatch_size = args['minibatch_size']
     optimizer_str = args['optimizer_str']
+    results_directory = args['results_directory']
     results_filename = args['results_filename']
     experiment_all_subjects(
         input_channels=input_channels,
         minibatch_size=minibatch_size,
         optimizer_str=optimizer_str,
+        results_directory=results_directory,
         results_filename=results_filename,
     )
 

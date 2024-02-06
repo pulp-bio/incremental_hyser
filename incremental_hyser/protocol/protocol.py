@@ -1,5 +1,6 @@
 from __future__ import annotations
 from itertools import product
+import os
 from pathlib import Path
 import pickle
 
@@ -175,9 +176,9 @@ def inference_on_onedof_ndof_random(idx_subject, model):
 
 
 def experiment_one_subject(
-
     idx_subject: int,
-
+    minibatch_size: int,
+    optimizer_str: str,
 ) -> dict:
 
     # ----------------------------------------------------------------------- #
@@ -193,7 +194,8 @@ def experiment_one_subject(
 
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
-
+    
+    """
     # determine MVCs and rescale forces
     # TODO: fast but redundant, repeated!
     mvc_v_dict = mvc.extract_all_mvcs(verbose=True, show_plots=False)
@@ -245,20 +247,22 @@ def experiment_one_subject(
     # load random, day 1
     # train
     # test on everything
-
+    """
 
     return results_dict_one_subj
 
 
 def save_results_dict(
     results_dict: dict,
-    results_dict_dst_filepath: str,
-) -> dict:
+    dir_name: str,
+    filename: str,
+) -> None:
 
     dict_to_dump = {'results': results_dict}  # add an outer key
 
-    # Path(RESULTS_DIR_PATH).mkdir(parents=True, exist_ok=True)
-    with open(results_dict_dst_filepath, 'wb') as f:
+    Path(dir_name).mkdir(parents=True, exist_ok=True)
+    path = os.path.join(dir_name, filename)
+    with open(path, 'wb') as f:
         pickle.dump(dict_to_dump, f)
 
     return
@@ -268,6 +272,7 @@ def experiment_all_subjects(
     input_channels: int,
     minibatch_size: int,
     optimizer_str: str,
+    results_directory: str,
     results_filename: str,
 ) -> dict:
 
@@ -297,11 +302,14 @@ def experiment_all_subjects(
                 input_channels=input_channels,
                 minibatch_size=minibatch_size,
                 optimizer_str=optimizer_str,
-                results_filename=results_filename,
             )
 
         # save all results after each subject
-        save_results_dict(results_dict, results_dict_dst_filepath)
+        save_results_dict(
+            results_dict=results_dict,
+            results_directory=results_directory,
+            results_filename=results_filename,
+        )
 
     return results_dict
 
