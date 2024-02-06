@@ -30,13 +30,13 @@ def concatenate_day_of_hyser_dataset(
         cartprod_of_dataset = product(
             range(hy.NUM_FINGERS),  # finger
             [None],  # combination
-            range(hy.NUM_TRIALS_RANDOM)  # trial
+            range(hy.NUM_TRIALS_ONEDOF)  # trial
         )
     elif dataset is hy.Dataset.NDOF :
         cartprod_of_dataset = product(
             [None],  # finger
             range(hy.NUM_COMBINATIONS_NDOF),  # combination
-            range(hy.NUM_TRIALS_RANDOM)  # trial
+            range(hy.NUM_TRIALS_NDOF)  # trial
         )
     elif dataset is hy.Dataset.RANDOM:
         cartprod_of_dataset = product(
@@ -76,6 +76,64 @@ def concatenate_day_of_hyser_dataset(
         hy.concatenate_trials(hdsemg_v_wholeday, force_v_wholeday)
 
     return hdsemg_v_wholeday, force_v_wholeday
+
+
+def inference_on_onedof_ndof_random(idx_subject, model):
+
+    result_dict = {
+        'onedof': {
+            'day': {},
+        },
+        'ndof': {
+            'day': {},
+        },
+        'random': {
+            'day': {},
+        },
+    }
+    
+    # onedof
+    for idx_day in range(hy.NUM_SESSIONS):
+
+
+    # ndof
+
+
+    # random
+    for idx_day, idx_trial in product(range(hy.NUM_SESSIONS), range(hy.NUM_TRIALS_RANDOM)):
+
+        x, y = load... # MOVE THE FORCE NORMALIZATION INSIDE THE LOAD!
+        '''
+        hdsemg_v_i, force_v_i = hy.load_hdsemg_and_force(
+            dataset=dataset
+            idx_subject=idx_subject,
+            idx_session=idx_session,
+            pr_task_type=None,  # hardcoded
+            hdsemg_signal_type=hy.SignalType.PREPROCESS,  # hardcoded
+            idx_finger=idx_finger,
+            idx_combination=idx_combination,
+            force_direction=None,  # hardcoded
+            idx_trial=idx_trial,
+        )
+        '''
+
+        yout = do_inference()
+
+        results_dict['random']['day'][idx_day] = compute_regression_metrics()
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    return
 
 
 def experiment_one_subject(
