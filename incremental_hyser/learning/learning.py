@@ -16,6 +16,9 @@ from . import goodness as good
 MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 
 
+WINDOW = 256
+SLIDE = 64
+
 class _EMGPytorchDataset():
 
     """
@@ -36,23 +39,26 @@ class _EMGPytorchDataset():
         self.x = x
         self.y = y
         self.num_examples = num_examples
+        self.num_windows = (num_examples - WINDOW) // SLIDE + 1 
 
     def __len__(self) -> int:
         return self.num_examples
 
-    def __data_generation(self, idx_example: int,
+    def __data_generation(self, idx_win: int,
     ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
 
-        # the format is (num_ch, num_exsamples): indicize the second dimension
-        assert idx_example <= self.num_examples
-        if self.y is None:
-            return self.x[:, idx_example]
-        else:
-            return self.x[:, idx_example], self.y[idx_example]
+        assert idx_win <= self.num_examples
 
-    def __getitem__(self, idx: int,
+        idx_start = WINDOW + idx_win * SLIDE
+        idx_stop = idx_start + WINDOW
+        if self.y is None:
+            return self.x[:, idx_start:idx_stop]
+        else:
+            return self.x[:, idx_start:idx_stop], self.y[idx_stop]
+
+    def __getitem__(self, idx_win: int,
     ) -> tuple[np.ndarray[np.float32], np.ndarray[np.float32]]:
-        return self.__data_generation(idx)
+        return self.__data_generation(idx_win)
 
 
 def _collate_x_only(

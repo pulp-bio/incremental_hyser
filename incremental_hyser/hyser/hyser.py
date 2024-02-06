@@ -333,20 +333,20 @@ def load_hdsemg_and_force(
     return hdsemg_v, force_v
 
 
-def concatenate_trials(
-    x_trials: list[np.ndarray[np.float32]] | None,  # any hd-semg or feature
-    f_trials: list[np.ndarray[np.float32]] | None,  # force
+def concatenate_segments(
+    x: list[np.ndarray[np.float32]] | None,  # any hd-semg or feature
+    f: list[np.ndarray[np.float32]] | None,  # force
 ) -> tuple[
     np.ndarray[np.float32] | None,
     np.ndarray[np.float32] | None,
 ]:
 
-    # Wrapper numpy.hstack in a paired fashion
+    # Wrapper of numpy.hstack in a paired fashion
 
-    x_concat = np.hstack(x_trials) if x_trials is not None else None
-    f_concat = np.hstack(f_trials) if f_trials is not None else None
+    x = np.hstack(x) if x is not None else None
+    f = np.hstack(f) if f is not None else None
 
-    return x_concat, f_concat
+    return x, f
 
 
 # def resample_by_hold(

@@ -4,6 +4,8 @@ import sys
 import argparse
 
 from incremental_hyser.hyser import hyser as hy
+from incremental_hyser.protocol.protocol import experiment_all_subjects
+
 
 
 def parse_my_args(argv=None) -> argparse.Namespace:
@@ -28,30 +30,7 @@ def main() -> None:
     args = parse_my_args()
     print(args)
 
-    # run_experiment(
-    #    input_channels=args.input_channels,
-    #    minibatch_size=args.minibatch_size,
-    #    optimizer_str=args.optimizer_str,
-    #    results_directory=args.results_directory,
-    # )
-
-    '''
-    for idx_subject in range(hy.NUM_SUBJECTS):
-
-        # load whole one-dof
-        # train on whole one-dof
-        # test on everything
-
-        # load ndof, day 1
-        # train
-        # test on everything
-
-        # load random, day 1
-        # train
-        # test on everything
-
-        # save results
-    '''
+    experiment_all_subjects()
 
     return
 
