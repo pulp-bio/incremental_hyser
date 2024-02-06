@@ -11,11 +11,11 @@ from incremental_hyser.protocol.protocol import experiment_all_subjects
 def parse_my_args(argv=None) -> argparse.Namespace:
     
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-i', '--input-channels', type=int, help="Number of subsampled input channels")
-    parser.add_argument('-b', '--minibatch-size', type=int, help="Mini-batch size")
+    parser.add_argument('-i', '--inchannels', type=int, help="Number of subsampled input channels")
+    parser.add_argument('-b', '--minibatch', type=int, help="Mini-batch size")
     parser.add_argument('-o', '--optimizer', type=str, choices=['sgd', 'adam'], help="Optimizer: SGD or Adam")
-    parser.add_argument('-d', '--results-directory', type=str, help="Destination directory of the results file")
-    parser.add_argument('-f', '--results-filename', type=str, help="Name of the results file")
+    parser.add_argument('-d', '--dirname', type=str, default="./results", help="Destination directory of the results file")
+    parser.add_argument('-f', '--filename', type=str, help="Name of the results file")
     args = parser.parse_args(argv)
 
     return args
@@ -32,11 +32,12 @@ def main() -> None:
     print(args)
 
     args = vars(args)
-    input_channels = args['input_channels']
-    minibatch_size = args['minibatch_size']
-    optimizer_str = args['optimizer_str']
-    results_directory = args['results_directory']
-    results_filename = args['results_filename']
+    # names changed here
+    input_channels = args['inchannels']
+    minibatch_size = args['minibatch']
+    optimizer_str = args['optimizer']
+    results_directory = args['dirname']
+    results_filename = args['filename']
     experiment_all_subjects(
         input_channels=input_channels,
         minibatch_size=minibatch_size,

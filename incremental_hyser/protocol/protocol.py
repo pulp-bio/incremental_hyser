@@ -177,6 +177,7 @@ def inference_on_onedof_ndof_random(idx_subject, model):
 
 def experiment_one_subject(
     idx_subject: int,
+    input_channels: int,
     minibatch_size: int,
     optimizer_str: str,
 ) -> dict:
@@ -227,7 +228,7 @@ def experiment_one_subject(
     # TODO: MAYBE SIMPLY SIMULATE WITH STEP AS FORCE SAMPLING? MUCH FASTER!
     # x_post_train = hy.downsample_myo_as_force(x_post_train)
     # x_post_valid = hy.downsample_myo_as_force(x_post_valid)
-
+    """
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
     
@@ -247,7 +248,6 @@ def experiment_one_subject(
     # load random, day 1
     # train
     # test on everything
-    """
 
     return results_dict_one_subj
 
@@ -307,8 +307,8 @@ def experiment_all_subjects(
         # save all results after each subject
         save_results_dict(
             results_dict=results_dict,
-            results_directory=results_directory,
-            results_filename=results_filename,
+            dir_name=results_directory,
+            filename=results_filename,
         )
 
     return results_dict
