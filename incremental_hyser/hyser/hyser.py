@@ -330,7 +330,14 @@ def load_hdsemg_and_force(
         idx_trial=idx_trial,
     )
 
-    return hdsemg_v, force_v
+    # interpolate the force
+    num_hi = hdsemg_v.shape[1]
+    force_v_interp = np.zeros((NUM_CHANNELS_FORCE, num_hi), dtype=np.float32)
+    for idx_hi in range(num_hi):
+        idx_lo = idx_hi * FS_FORCE // FS_HDSEMG
+        force_v_interp[:, idx_lo]
+
+    return hdsemg_v, force_v_interp
 
 
 def concatenate_segments(

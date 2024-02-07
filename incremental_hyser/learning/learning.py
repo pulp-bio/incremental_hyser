@@ -91,7 +91,7 @@ def _collate_xy_pairs(
 
 
 @enum.unique
-class _LoaderMode(enum.Enum):
+class LoaderMode(enum.Enum):
     TRAINING_RANDOMIZED = 'TRAINING_RANDOMIZED'
     TRAINING_SEQUENTIAL = 'TRAINING_SEQUENTIAL'
     INFERENCE = 'INFERENCE'
@@ -99,27 +99,27 @@ class _LoaderMode(enum.Enum):
 
 def _dataset2dataloader(
     dataset: _EMGPytorchDataset,
-    loadermode: _LoaderMode,
+    loadermode: LoaderMode,
     minibatch_size: int | None,
 ) -> torch.utils.data.DataLoader:
 
-    assert isinstance(loadermode, _LoaderMode)
-    if loadermode is _LoaderMode.INFERENCE:
+    assert isinstance(loadermode, LoaderMode)
+    if loadermode is LoaderMode.INFERENCE:
         assert minibatch_size is None
     else:
         assert minibatch_size is not None
 
-    if loadermode is _LoaderMode.TRAINING_RANDOMIZED:
+    if loadermode is LoaderMode.TRAINING_RANDOMIZED:
         batch_size = minibatch_size
         drop_last = True
         shuffle = True
         sampler = None
-    if loadermode is _LoaderMode.TRAINING_SEQUENTIAL:
+    if loadermode is LoaderMode.TRAINING_SEQUENTIAL:
         batch_size = minibatch_size
         drop_last = True
         shuffle = False
         sampler = torch.utils.data.SequentialSampler(dataset)
-    elif loadermode is _LoaderMode.INFERENCE:
+    elif loadermode is LoaderMode.INFERENCE:
         batch_size = MINIBATCH_SIZE_INFER
         drop_last = False
         shuffle = False
@@ -148,7 +148,7 @@ def do_inference(
 ) -> tuple:
 
     dataset = _EMGPytorchDataset(x)
-    dataloader = _dataset2dataloader(dataset, mode=_LoaderMode.INFERENCE)
+    dataloader = _dataset2dataloader(dataset, mode=LoaderMode.INFERENCE)
 
     model.eval()
     model.to(DEVICE)
@@ -181,9 +181,9 @@ def do_training(
     yvalid: np.ndarray[np.uint8 | np.float32] | None,
     model: torch.nn.Module,
     loadermode_train: \
-        [_LoaderMode.TRAINING_RANDOMIZED, _LoaderMode.TRAINING_SEQUENTIAL],
+        [LoaderMode.TRAINING_RANDOMIZED, LoaderMode.TRAINING_SEQUENTIAL],
     minibatch_train: int,
-    minibatch_valid: int,
+    # minibatch_valid: int,
     num_epochs: int,
     criterion: torch.nn.Module | None = None,  # None as default (ugly)
     optimizer: torch.optim.Optimizer | None = None,  # None as default (ugly)
@@ -192,11 +192,11 @@ def do_training(
 
     assert (xvalid is None) == (yvalid is None)
     assert loadermode_train in \
-        [_LoaderMode.TRAINING_RANDOMIZED, _LoaderMode.TRAINING_SEQUENTIAL]
+        [LoaderMode.TRAINING_RANDOMIZED, LoaderMode.TRAINING_SEQUENTIAL]
     
     dataset_train = _EMGPytorchDataset(xtrain, ytrain)
     dataloader_train = _dataset2dataloader(
-        dataset_train, loadermode=loadermode_train)
+        dataset_train, loadermode_train, minibatch_train)
 
     model.to(DEVICE)
     model.train()

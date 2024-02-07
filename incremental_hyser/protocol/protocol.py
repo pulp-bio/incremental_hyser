@@ -10,6 +10,7 @@ from ..hyser import hyser as hy
 from ..hyser import mvc
 
 from ..learning import settings as learningsettings
+from ..learning import learning as models
 from ..learning import learning as learn
 from ..learning import goodness as good
 
@@ -196,48 +197,45 @@ def experiment_one_subject(
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
     
-    """
-    # determine MVCs and rescale forces
+    # determine MVCs to rescale forces
     # TODO: fast but redundant, repeated!
     mvc_v_dict = mvc.extract_all_mvcs(verbose=True, show_plots=False)
     # TODO: write a function to unpack
-
-    # TODO: BETTER TO RESCALE PAIRWISE AFER INFERENCE!
-    # OR MAYBE TRY BOTH WAYS AND SEE IF ACCURACY CHANGES
-
-    mvc_ext_v_train = mvc_v_dict['subject'][idx_subject]['session'][
-        IDX_SESSION_TRAINING]['direction'][hy.ForceDirection.EXTENSION.value]
-    mvc_flex_v_train = mvc_v_dict['subject'][idx_subject]['session'][
-        IDX_SESSION_TRAINING]['direction'][hy.ForceDirection.FLEXION.value]
-    mvc_ext_v_valid = mvc_v_dict['subject'][idx_subject]['session'][
-        IDX_SESSION_VALIDATION]['direction'][hy.ForceDirection.EXTENSION.value]
-    mvc_flex_v_valid = mvc_v_dict['subject'][idx_subject]['session'][
-        IDX_SESSION_VALIDATION]['direction'][hy.ForceDirection.FLEXION.value]
-
-    force_mvc_train = mvc.rescale_force_volt2mvc(
-        force_v_train, mvc_ext_v_train, mvc_flex_v_train)
-    del force_v_train
-    force_mvc_valid = mvc.rescale_force_volt2mvc(
-        force_v_valid, mvc_ext_v_train, mvc_flex_v_train)
-    del force_v_valid
-
-    # ----------------------------------------------------------------------- #
-    # ----------------------------------------------------------------------- #
+    IDX_DAY_TRAIN = 0
+    IDX_DAY_VALID = 0
+    mvc_ext_v_train = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_TRAIN]['direction'][hy.ForceDirection.EXTENSION.value]
+    mvc_flex_v_train = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_TRAIN]['direction'][hy.ForceDirection.FLEXION.value]
+    mvc_ext_v_valid = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_VALID]['direction'][hy.ForceDirection.EXTENSION.value]
+    mvc_flex_v_valid = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_VALID]['direction'][hy.ForceDirection.FLEXION.value]
     
-    # adjust sampling
-    # TODO: MAYBE SIMPLY SIMULATE WITH STEP AS FORCE SAMPLING? MUCH FASTER!
-    # x_post_train = hy.downsample_myo_as_force(x_post_train)
-    # x_post_valid = hy.downsample_myo_as_force(x_post_valid)
-    """
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
     
     # load whole one-dof
     xtrain, ytrain = load_concat_day_of_hyser_dataset(hy.Dataset.ONEDOF, idx_subject, idx_day=0)
-    xvalid, yvalid = load_concat_day_of_hyser_dataset(hy.Dataset.ONEDOF, idx_subject, idx_day=0)
+    xvalid, yvalid = load_concat_day_of_hyser_dataset(hy.Dataset.ONEDOF, idx_subject, idx_day=1)
+
+    # rescale forces to units of MVC
+    ytrain = mvc.rescale_force_volt2mvc(ytrain, mvc_ext_v_train, mvc_flex_v_train)
+    yvalid = mvc.rescale_force_volt2mvc(yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
+
     # train on whole one-dof
-    training_outcome = learn.do_training(xtrain, ytrain, xvalid, yvalid, ...)
-    model = training_outcome['model']
+    model = models.tiniernet8(
+        num_ch_in=hy.NUM_CHANNELS_HDSEMG,
+        num_ch_out=hy.NUM_CHANNELS_FORCE,
+    )
+
+    minibatch_train = minibatch_size
+
+    training_summary_dict = learn.do_training(
+        xtrain, ytrain, xvalid, yvalid, model,
+        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        minibatch_train=minibatch_size,
+        num_epochs=8,
+    )
+    del xtrain, ytrain, xvalid, yvalid
+
+    model = training_summary_dict['model']
     # test on everything
     inference_results_dict = inference_on_onedof_ndof_random(idx_subject, model)
 
