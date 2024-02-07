@@ -330,17 +330,23 @@ def load_hdsemg_and_force(
         idx_trial=idx_trial,
     )
 
+    # subsample the HD-sEMG channels from 256 to 64: step 2 in both dimensions
+    num_samples_hdsemg = hdsemg_v.shape[1]
+    hdsemg_v = hdsemg_v.reshape((8, 8, 4, num_samples_hdsemg))
+    hdsemg_v = hdsemg_v[::2, ::2]
+    hdsemg_v = hdsemg_v.reshape((64, num_samples_hdsemg))
+
     # interpolate the force
     num_hi = hdsemg_v.shape[1]
     force_v_interp = np.zeros((NUM_CHANNELS_FORCE, num_hi), dtype=np.float32)
     for idx_hi in range(num_hi):
         idx_lo = idx_hi * FS_FORCE // FS_HDSEMG
-        force_v_interp[:, idx_lo]
+        force_v_interp[:, idx_hi] = force_v[:, idx_lo]
 
     return hdsemg_v, force_v_interp
 
 
-def concatenate_segments(
+def concatenate_paired_segments(
     x: list[np.ndarray[np.float32]] | None,  # any hd-semg or feature
     f: list[np.ndarray[np.float32]] | None,  # force
 ) -> tuple[

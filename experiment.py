@@ -11,10 +11,10 @@ from incremental_hyser.protocol.protocol import experiment_all_subjects
 def parse_my_args(argv=None) -> argparse.Namespace:
     
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-i', '--inchannels', type=int, help="Number of subsampled input channels")
+    parser.add_argument('-i', '--inchannels', type=int, help="Subsampled input channels")
     parser.add_argument('-b', '--minibatch', type=int, help="Mini-batch size")
     parser.add_argument('-o', '--optimizer', type=str, choices=['sgd', 'adam'], help="Optimizer: SGD or Adam")
-    parser.add_argument('-d', '--dirname', type=str, default="./results", help="Destination directory of the results file")
+    parser.add_argument('-d', '--dirname', type=str, default="./results", help="Destination directory of results file")
     parser.add_argument('-f', '--filename', type=str, help="Name of the results file")
     args = parser.parse_args(argv)
 

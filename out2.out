@@ -1,0 +1,20 @@
+nohup: ignoring input
+['experiment.py', '-i', '64', '-b', '32', '-o', 'adam', '-f', 'prova2.pkl']
+Namespace(dirname='./results', filename='prova2.pkl', inchannels=64, minibatch=32, optimizer='adam')
+
+------------------------------------------------------------
+SUBJECT 1/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.502s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0417	0.0262		0.0611	0.0370		4.5
+
+
+Validating on ONEDOF

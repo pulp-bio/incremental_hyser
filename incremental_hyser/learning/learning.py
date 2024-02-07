@@ -31,30 +31,29 @@ class _EMGPytorchDataset():
         y: np.ndarray[np.float32] | None = None,
     ):
 
-        # "examples" is less ambiguous than "samples": not the single numbers
-        _, num_examples = x.shape
+        _, num_samples = x.shape
         if y is not None:
-            assert len(y) == num_examples
+            assert y.shape[1] == num_samples
         
         self.x = x
         self.y = y
-        self.num_examples = num_examples
-        self.num_windows = (num_examples - WINDOW) // SLIDE + 1 
+        self.num_samples = num_samples
+        self.num_windows = (num_samples - WINDOW) // SLIDE + 1 
 
     def __len__(self) -> int:
-        return self.num_examples
+        return self.num_windows
 
     def __data_generation(self, idx_win: int,
-    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.uint8 | np.float32]]:
+    ) -> tuple[np.ndarray[np.float32], np.ndarray[np.float32]]:
 
-        assert idx_win <= self.num_examples
+        assert idx_win <= self.num_windows
 
-        idx_start = WINDOW + idx_win * SLIDE
-        idx_stop = idx_start + WINDOW
+        idx_start = idx_win * SLIDE
+        idx_end = idx_start + WINDOW
         if self.y is None:
-            return self.x[:, idx_start:idx_stop]
+            return self.x[:, idx_start:idx_end]
         else:
-            return self.x[:, idx_start:idx_stop], self.y[idx_stop]
+            return self.x[:, idx_start:idx_end], self.y[:, idx_end - 1]
 
     def __getitem__(self, idx_win: int,
     ) -> tuple[np.ndarray[np.float32], np.ndarray[np.float32]]:
@@ -100,27 +99,23 @@ class LoaderMode(enum.Enum):
 def _dataset2dataloader(
     dataset: _EMGPytorchDataset,
     loadermode: LoaderMode,
-    minibatch_size: int | None,
+    minibatch_size: int,
 ) -> torch.utils.data.DataLoader:
 
     assert isinstance(loadermode, LoaderMode)
-    if loadermode is LoaderMode.INFERENCE:
-        assert minibatch_size is None
-    else:
-        assert minibatch_size is not None
 
     if loadermode is LoaderMode.TRAINING_RANDOMIZED:
         batch_size = minibatch_size
         drop_last = True
         shuffle = True
         sampler = None
-    if loadermode is LoaderMode.TRAINING_SEQUENTIAL:
+    elif loadermode is LoaderMode.TRAINING_SEQUENTIAL:
         batch_size = minibatch_size
         drop_last = True
         shuffle = False
         sampler = torch.utils.data.SequentialSampler(dataset)
     elif loadermode is LoaderMode.INFERENCE:
-        batch_size = MINIBATCH_SIZE_INFER
+        batch_size = minibatch_size
         drop_last = False
         shuffle = False
         sampler = torch.utils.data.SequentialSampler(dataset)
@@ -148,7 +143,11 @@ def do_inference(
 ) -> tuple:
 
     dataset = _EMGPytorchDataset(x)
-    dataloader = _dataset2dataloader(dataset, mode=LoaderMode.INFERENCE)
+    dataloader = _dataset2dataloader(
+        dataset,
+        loadermode=LoaderMode.INFERENCE,
+        minibatch_size=MINIBATCH_SIZE_INFER,
+    )
 
     model.eval()
     model.to(DEVICE)
@@ -176,9 +175,9 @@ def do_inference(
 
 def do_training(
     xtrain: np.ndarray[np.float32],
-    ytrain: np.ndarray[np.uint8 | np.float32],
+    ytrain: np.ndarray[np.float32],
     xvalid: np.ndarray[np.float32] | None,
-    yvalid: np.ndarray[np.uint8 | np.float32] | None,
+    yvalid: np.ndarray[np.float32] | None,
     model: torch.nn.Module,
     loadermode_train: \
         [LoaderMode.TRAINING_RANDOMIZED, LoaderMode.TRAINING_SEQUENTIAL],
@@ -234,16 +233,21 @@ def do_training(
             loss_b.backward()
             optimizer.step()
 
-        yout_train = do_inference(xtrain, model)
+        # an ugly patch for windowing the grout-truths too
+        # TODO: implement it better
+        ytrain_win = ytrain[:, WINDOW - 1 :: SLIDE]
+        yvalid_win = yvalid[:, WINDOW - 1 :: SLIDE]
+
+        yout_train_win = do_inference(xtrain, model)
         metrics_train_epoch = \
-            good.compute_regression_metrics(ytrain, yout_train)
+            good.compute_regression_metrics(ytrain_win, yout_train_win.T)
 
         if xvalid is not None and yvalid is not None:
-            yout_valid = do_inference(xvalid, model)
+            yout_valid_win = do_inference(xvalid, model)
             metrics_valid_epoch = \
-                good.compute_regression_metrics(yvalid, yout_valid)
+                good.compute_regression_metrics(yvalid_win, yout_valid_win.T)
         else:
-            yout_valid = None
+            yout_valid_win = None
             metrics_valid_epoch = None
 
         t_end_epoch_s = time.time()
@@ -253,10 +257,10 @@ def do_training(
             print("%d/%d\t\t%.4f\t%.4f\t\t%.4f\t%.4f\t\t%.1f" % (
                 idx_epoch + 1,
                 num_epochs,
-                metrics_train_epoch['rmse'],
-                metrics_train_epoch['mae'],
-                metrics_valid_epoch['rmse'],
-                metrics_valid_epoch['mae'],
+                np.sqrt(np.mean(np.square(metrics_train_epoch['rmse']))),
+                metrics_train_epoch['mae'].mean(),
+                np.sqrt(np.mean(np.square(metrics_valid_epoch['rmse']))),
+                metrics_valid_epoch['mae'].mean(),
                 deltat_epoch_s,
             ))
 
@@ -264,8 +268,8 @@ def do_training(
             print("%d/%d\t\t%.4f\t%.4f\t\tnone\tnone\t\t%.1f" % (
                 idx_epoch + 1,
                 num_epochs,
-                metrics_train_epoch['rmse'],
-                metrics_train_epoch['mae'],
+                np.sqrt(np.mean(np.square(metrics_train_epoch['rmse']))),
+                metrics_train_epoch['mae'].mean(),
                 deltat_epoch_s,
             ))
 
@@ -276,10 +280,10 @@ def do_training(
         }
 
         labels_dict = {
-            'ytrain': ytrain,
-            'yvalid': ytrain,
-            'yout_train': yout_train,
-            'yout_valid': yout_valid,
+            'ytrain': ytrain_win,
+            'yvalid': ytrain_win,
+            'yout_train': yout_train_win,
+            'yout_valid': yout_valid_win,
             
         }
 

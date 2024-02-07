@@ -10,7 +10,7 @@ from ..hyser import hyser as hy
 from ..hyser import mvc
 
 from ..learning import settings as learningsettings
-from ..learning import learning as models
+from ..learning.models import TinierNet8
 from ..learning import learning as learn
 from ..learning import goodness as good
 
@@ -76,14 +76,14 @@ def load_concat_day_of_hyser_dataset(
 
     # concatenate
     hdsemg_v_wholeday, force_v_wholeday = \
-        hy.concatenate_trials(hdsemg_v_wholeday, force_v_wholeday)
+        hy.concatenate_paired_segments(hdsemg_v_wholeday, force_v_wholeday)
 
     return hdsemg_v_wholeday, force_v_wholeday
 
 
 def inference_on_onedof_ndof_random(idx_subject, model):
 
-    results_dict = {
+    wholeinference_dict = {
         'onedof': {
             'day': {},
         },
@@ -98,11 +98,13 @@ def inference_on_onedof_ndof_random(idx_subject, model):
     # ----------------------------------------------------------------------- #
     
     # ONEDOF
+
+    print('\n\nValidating on ONEDOF')
     
     for idx_day in range(hy.NUM_SESSIONS):
-        results_dict['onedof']['day'][idx_day] = {'finger': {}}
+        wholeinference_dict['onedof']['day'][idx_day] = {'finger': {}}
         for idx_finger in range(hy.NUM_FINGERS):
-            results_dict['onedof']['day'][idx_day]['finger'][idx_finger] = {'trial': {}}
+            wholeinference_dict['onedof']['day'][idx_day]['finger'][idx_finger] = {'trial': {}}
             for idx_trial in range(hy.NUM_TRIALS_ONEDOF):
 
                 x, y = hy.load_hdsemg_and_force(
@@ -117,17 +119,20 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                     idx_trial=idx_trial,
                 )
                 yout = learn.do_inference(x, model)
-                results_dict['onedof']['day'][idx_day]['finger'][idx_finger]['trial'][idx_trial] = good.compute_regression_metrics(y, yout)
+                wholeinference_dict['onedof']['day'][idx_day]['finger'][idx_finger]['trial'][idx_trial] = \
+                    good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
                 del x, y, yout
 
     # ----------------------------------------------------------------------- #
 
     # NDOF
+                
+    print('\n\nValidating on NDOF')
 
     for idx_day in range(hy.NUM_SESSIONS):
-        results_dict['ndof']['day'][idx_day] = {'combination': {}}
+        wholeinference_dict['ndof']['day'][idx_day] = {'combination': {}}
         for idx_combination in range(hy.NUM_COMBINATIONS_NDOF):
-            results_dict['onedof']['day'][idx_day]['combination'][idx_combination] = {'trial': {}}
+            wholeinference_dict['ndof']['day'][idx_day]['combination'][idx_combination] = {'trial': {}}
             for idx_trial in range(hy.NUM_TRIALS_NDOF):
 
                 x, y = hy.load_hdsemg_and_force(
@@ -142,15 +147,18 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                     idx_trial=idx_trial,
                 )
                 yout = learn.do_inference(x, model)
-                results_dict['ndof']['day'][idx_day]['combination'][idx_combination]['trial'][idx_trial] = good.compute_regression_metrics(y, yout)
+                wholeinference_dict['ndof']['day'][idx_day]['combination'][idx_combination]['trial'][idx_trial] = \
+                    good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
                 del x, y, yout
 
     # ----------------------------------------------------------------------- #
     
     # RANDOM
     
+    print('\n\nValidating on RANDOM')
+    
     for idx_day in range(hy.NUM_SESSIONS):
-        results_dict['random']['day'][idx_day] = {'trial': {}}
+        wholeinference_dict['random']['day'][idx_day] = {'trial': {}}
         for idx_trial in range(hy.NUM_TRIALS_RANDOM):
 
             # MOVE THE FORCE NORMALIZATION INSIDE THE LOAD!
@@ -167,13 +175,13 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                 idx_trial=idx_trial,
             )
             yout = learn.do_inference(x, model)
-            results_dict['random']['day'][idx_day]['trial'][idx_trial] = \
-                good.compute_regression_metrics(y, yout)
+            wholeinference_dict['random']['day'][idx_day]['trial'][idx_trial] = \
+                good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
             del x, y, yout
     
     # ----------------------------------------------------------------------- #
 
-    return results_dict
+    return wholeinference_dict
 
 
 def experiment_one_subject(
@@ -186,7 +194,7 @@ def experiment_one_subject(
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
 
-    results_dict_one_subj = {
+    results_onesubj_dict = {
         'stage': {
             0: {},
             1: {},
@@ -210,44 +218,104 @@ def experiment_one_subject(
     
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
-    
-    # load whole one-dof
-    xtrain, ytrain = load_concat_day_of_hyser_dataset(hy.Dataset.ONEDOF, idx_subject, idx_day=0)
-    xvalid, yvalid = load_concat_day_of_hyser_dataset(hy.Dataset.ONEDOF, idx_subject, idx_day=1)
 
-    # rescale forces to units of MVC
-    ytrain = mvc.rescale_force_volt2mvc(ytrain, mvc_ext_v_train, mvc_flex_v_train)
-    yvalid = mvc.rescale_force_volt2mvc(yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
+    # STAGE 0
+    
+    # load whole one-dof and rescale forces to units of MVC
+    xtrain, ytrain = load_concat_day_of_hyser_dataset(
+        hy.Dataset.ONEDOF, idx_subject, idx_day=0)
+    xvalid, yvalid = load_concat_day_of_hyser_dataset(
+        hy.Dataset.ONEDOF, idx_subject, idx_day=1)
+    ytrain = mvc.rescale_force_volt2mvc(
+        ytrain, mvc_ext_v_train, mvc_flex_v_train)
+    yvalid = mvc.rescale_force_volt2mvc(
+        yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
 
     # train on whole one-dof
-    model = models.tiniernet8(
-        num_ch_in=hy.NUM_CHANNELS_HDSEMG,
-        num_ch_out=hy.NUM_CHANNELS_FORCE,
-    )
-
+    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
     minibatch_train = minibatch_size
-
     training_summary_dict = learn.do_training(
         xtrain, ytrain, xvalid, yvalid, model,
         loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
-        minibatch_train=minibatch_size,
-        num_epochs=8,
+        minibatch_train=minibatch_train,
+        num_epochs=1,
     )
     del xtrain, ytrain, xvalid, yvalid
 
     model = training_summary_dict['model']
     # test on everything
-    inference_results_dict = inference_on_onedof_ndof_random(idx_subject, model)
+    results_onesubj_dict['stage'][0] = \
+        inference_on_onedof_ndof_random(idx_subject, model)
+    del model
 
-    # load ndof, day 1
-    # train
+    # ----------------------------------------------------------------------- #
+    # ----------------------------------------------------------------------- #
+
+    # STAGE 1
+
+    # load whole n-dof and rescale forces to units of MVC
+    xtrain, ytrain = load_concat_day_of_hyser_dataset(
+        hy.Dataset.NDOF, idx_subject, idx_day=0)
+    xvalid, yvalid = load_concat_day_of_hyser_dataset(
+        hy.Dataset.NDOF, idx_subject, idx_day=1)
+    ytrain = mvc.rescale_force_volt2mvc(
+        ytrain, mvc_ext_v_train, mvc_flex_v_train)
+    yvalid = mvc.rescale_force_volt2mvc(
+        yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
+
+    # train on whole one-dof
+    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
+    minibatch_train = minibatch_size
+    training_summary_dict = learn.do_training(
+        xtrain, ytrain, xvalid, yvalid, model,
+        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        minibatch_train=minibatch_train,
+        num_epochs=1,
+    )
+    del xtrain, ytrain, xvalid, yvalid
+
+    model = training_summary_dict['model']
     # test on everything
+    results_onesubj_dict['stage'][1] = \
+        inference_on_onedof_ndof_random(idx_subject, model)
+    del model
 
-    # load random, day 1
-    # train
+    # ----------------------------------------------------------------------- #
+    # ----------------------------------------------------------------------- #
+
+    # STAGE 2
+
+    # load whole random and rescale forces to units of MVC
+    xtrain, ytrain = load_concat_day_of_hyser_dataset(
+        hy.Dataset.NDOF, idx_subject, idx_day=0)
+    xvalid, yvalid = load_concat_day_of_hyser_dataset(
+        hy.Dataset.NDOF, idx_subject, idx_day=1)
+    ytrain = mvc.rescale_force_volt2mvc(
+        ytrain, mvc_ext_v_train, mvc_flex_v_train)
+    yvalid = mvc.rescale_force_volt2mvc(
+        yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
+
+    # train on whole random
+    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
+    minibatch_train = minibatch_size
+    training_summary_dict = learn.do_training(
+        xtrain, ytrain, xvalid, yvalid, model,
+        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        minibatch_train=minibatch_train,
+        num_epochs=1,
+    )
+    del xtrain, ytrain, xvalid, yvalid
+
+    model = training_summary_dict['model']
     # test on everything
+    results_onesubj_dict['stage'][2] = \
+        inference_on_onedof_ndof_random(idx_subject, model)
+    del model
 
-    return results_dict_one_subj
+    # ----------------------------------------------------------------------- #
+    # ----------------------------------------------------------------------- #
+
+    return results_onesubj_dict
 
 
 def save_results_dict(
@@ -280,7 +348,7 @@ def experiment_all_subjects(
     # ----------------------------------------------------------------------- #
 
     # initialize the results dictionary, the structure to store the results
-    results_dict = {
+    results_allsubj_dict = {
         'subject': {},
     }
     
@@ -294,7 +362,7 @@ def experiment_all_subjects(
         )
         # ------------------------------------------------------------------- #
 
-        results_dict['subject'][idx_subject] = \
+        results_allsubj_dict['subject'][idx_subject] = \
             experiment_one_subject(
                 idx_subject=idx_subject,
                 input_channels=input_channels,
@@ -304,12 +372,12 @@ def experiment_all_subjects(
 
         # save all results after each subject
         save_results_dict(
-            results_dict=results_dict,
+            results_dict=results_allsubj_dict,
             dir_name=results_directory,
             filename=results_filename,
         )
 
-    return results_dict
+    return results_allsubj_dict
 
 
 def main() -> None:
