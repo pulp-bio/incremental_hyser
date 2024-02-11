@@ -5,10 +5,10 @@ from pathlib import Path
 import pickle
 
 import numpy as np
+import torch.optim
 
 from ..hyser import hyser as hy
 from ..hyser import mvc
-
 from ..learning import settings as learningsettings
 from ..learning.models import TinierNet8
 from ..learning import learning as learn
@@ -107,6 +107,9 @@ def inference_on_onedof_ndof_random(idx_subject, model):
             wholeinference_dict['onedof']['day'][idx_day]['finger'][idx_finger] = {'trial': {}}
             for idx_trial in range(hy.NUM_TRIALS_ONEDOF):
 
+                mvc_ext_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.EXTENSION.value]
+                mvc_flex_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.FLEXION.value]
+
                 x, y = hy.load_hdsemg_and_force(
                     dataset=hy.Dataset.ONEDOF,
                     idx_subject=idx_subject,
@@ -118,6 +121,8 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                     force_direction=None,  # hardcoded
                     idx_trial=idx_trial,
                 )
+                y = mvc.rescale_force_volt2mvc(y, mvc_ext_v_day, mvc_flex_v_day)
+
                 yout = learn.do_inference(x, model)
                 wholeinference_dict['onedof']['day'][idx_day]['finger'][idx_finger]['trial'][idx_trial] = \
                     good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
@@ -135,6 +140,9 @@ def inference_on_onedof_ndof_random(idx_subject, model):
             wholeinference_dict['ndof']['day'][idx_day]['combination'][idx_combination] = {'trial': {}}
             for idx_trial in range(hy.NUM_TRIALS_NDOF):
 
+                mvc_ext_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.EXTENSION.value]
+                mvc_flex_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.FLEXION.value]
+
                 x, y = hy.load_hdsemg_and_force(
                     dataset=hy.Dataset.NDOF,
                     idx_subject=idx_subject,
@@ -146,6 +154,8 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                     force_direction=None,  # hardcoded
                     idx_trial=idx_trial,
                 )
+                y = mvc.rescale_force_volt2mvc(y, mvc_ext_v_day, mvc_flex_v_day)
+    
                 yout = learn.do_inference(x, model)
                 wholeinference_dict['ndof']['day'][idx_day]['combination'][idx_combination]['trial'][idx_trial] = \
                     good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
@@ -161,7 +171,8 @@ def inference_on_onedof_ndof_random(idx_subject, model):
         wholeinference_dict['random']['day'][idx_day] = {'trial': {}}
         for idx_trial in range(hy.NUM_TRIALS_RANDOM):
 
-            # MOVE THE FORCE NORMALIZATION INSIDE THE LOAD!
+            mvc_ext_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.EXTENSION.value]
+            mvc_flex_v_day = mvc.MVC_V_DICT['subject'][idx_subject]['session'][idx_day]['direction'][hy.ForceDirection.FLEXION.value]
 
             x, y = hy.load_hdsemg_and_force(
                 dataset=hy.Dataset.RANDOM,
@@ -174,6 +185,8 @@ def inference_on_onedof_ndof_random(idx_subject, model):
                 force_direction=None,  # hardcoded
                 idx_trial=idx_trial,
             )
+            y = mvc.rescale_force_volt2mvc(y, mvc_ext_v_day, mvc_flex_v_day)
+
             yout = learn.do_inference(x, model)
             wholeinference_dict['random']['day'][idx_day]['trial'][idx_trial] = \
                 good.compute_regression_metrics(y[:, learn.WINDOW - 1 :: learn.SLIDE], yout.T)
@@ -186,10 +199,35 @@ def inference_on_onedof_ndof_random(idx_subject, model):
 
 def experiment_one_subject(
     idx_subject: int,
-    input_channels: int,
-    minibatch_size: int,
-    optimizer_str: str,
+    learning_mode: str,
 ) -> dict:
+    
+    assert idx_subject in range(hy.NUM_SUBJECTS)
+    assert learning_mode in ['baseline', 'online']
+
+    model = TinierNet8(num_ch_in=64, num_ch_out=hy.NUM_CHANNELS_FORCE)
+    # model.half()
+
+    if learning_mode == 'baseline':
+
+        loadermode_train = learn.LoaderMode.TRAINING_RANDOMIZED
+        minibatch_train = 32
+        optimizer = torch.optim.Adam(
+            model.parameters(), lr=0.0001, weight_decay=0.0)
+        num_epochs = 8
+
+    elif learning_mode == 'online':
+    
+        loadermode_train = learn.LoaderMode.TRAINING_SEQUENTIAL
+        minibatch_train = 1
+        optimizer = torch.optim.SGD(
+            model.parameters(), lr=0.000176, weight_decay=0.0)
+        num_epochs = 1
+
+    else:
+        raise NotImplementedError
+
+
 
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
@@ -207,14 +245,12 @@ def experiment_one_subject(
     
     # determine MVCs to rescale forces
     # TODO: fast but redundant, repeated!
-    mvc_v_dict = mvc.extract_all_mvcs(verbose=True, show_plots=False)
+    mvc.MVC_V_DICT = mvc.extract_all_mvcs(verbose=True, show_plots=False)
     # TODO: write a function to unpack
-    IDX_DAY_TRAIN = 0
-    IDX_DAY_VALID = 0
-    mvc_ext_v_train = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_TRAIN]['direction'][hy.ForceDirection.EXTENSION.value]
-    mvc_flex_v_train = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_TRAIN]['direction'][hy.ForceDirection.FLEXION.value]
-    mvc_ext_v_valid = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_VALID]['direction'][hy.ForceDirection.EXTENSION.value]
-    mvc_flex_v_valid = mvc_v_dict['subject'][idx_subject]['session'][IDX_DAY_VALID]['direction'][hy.ForceDirection.FLEXION.value]
+    mvc_ext_v_train = mvc.MVC_V_DICT['subject'][idx_subject]['session'][0]['direction'][hy.ForceDirection.EXTENSION.value]
+    mvc_flex_v_train = mvc.MVC_V_DICT['subject'][idx_subject]['session'][0]['direction'][hy.ForceDirection.FLEXION.value]
+    mvc_ext_v_valid = mvc.MVC_V_DICT['subject'][idx_subject]['session'][1]['direction'][hy.ForceDirection.EXTENSION.value]
+    mvc_flex_v_valid = mvc.MVC_V_DICT['subject'][idx_subject]['session'][1]['direction'][hy.ForceDirection.FLEXION.value]
     
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
@@ -232,13 +268,12 @@ def experiment_one_subject(
         yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
 
     # train on whole one-dof
-    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
-    minibatch_train = minibatch_size
     training_summary_dict = learn.do_training(
         xtrain, ytrain, xvalid, yvalid, model,
-        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        loadermode_train=loadermode_train,
+        optimizer=optimizer,
         minibatch_train=minibatch_train,
-        num_epochs=1,
+        num_epochs=num_epochs,
     )
     del xtrain, ytrain, xvalid, yvalid
 
@@ -246,7 +281,7 @@ def experiment_one_subject(
     # test on everything
     results_onesubj_dict['stage'][0] = \
         inference_on_onedof_ndof_random(idx_subject, model)
-    del model
+    # ### del model
 
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
@@ -264,13 +299,12 @@ def experiment_one_subject(
         yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
 
     # train on whole one-dof
-    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
-    minibatch_train = minibatch_size
     training_summary_dict = learn.do_training(
         xtrain, ytrain, xvalid, yvalid, model,
-        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        loadermode_train=loadermode_train,
+        optimizer=optimizer,
         minibatch_train=minibatch_train,
-        num_epochs=1,
+        num_epochs=num_epochs,
     )
     del xtrain, ytrain, xvalid, yvalid
 
@@ -278,7 +312,7 @@ def experiment_one_subject(
     # test on everything
     results_onesubj_dict['stage'][1] = \
         inference_on_onedof_ndof_random(idx_subject, model)
-    del model
+    # ### del model
 
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
@@ -287,22 +321,21 @@ def experiment_one_subject(
 
     # load whole random and rescale forces to units of MVC
     xtrain, ytrain = load_concat_day_of_hyser_dataset(
-        hy.Dataset.NDOF, idx_subject, idx_day=0)
+        hy.Dataset.RANDOM, idx_subject, idx_day=0)
     xvalid, yvalid = load_concat_day_of_hyser_dataset(
-        hy.Dataset.NDOF, idx_subject, idx_day=1)
+        hy.Dataset.RANDOM, idx_subject, idx_day=1)
     ytrain = mvc.rescale_force_volt2mvc(
         ytrain, mvc_ext_v_train, mvc_flex_v_train)
     yvalid = mvc.rescale_force_volt2mvc(
         yvalid, mvc_ext_v_valid, mvc_flex_v_valid)
 
     # train on whole random
-    model = TinierNet8(num_ch_in=64,num_ch_out=hy.NUM_CHANNELS_FORCE)
-    minibatch_train = minibatch_size
     training_summary_dict = learn.do_training(
         xtrain, ytrain, xvalid, yvalid, model,
-        loadermode_train=learn.LoaderMode.TRAINING_RANDOMIZED,
+        loadermode_train=loadermode_train,
+        optimizer=optimizer,
         minibatch_train=minibatch_train,
-        num_epochs=1,
+        num_epochs=num_epochs,
     )
     del xtrain, ytrain, xvalid, yvalid
 
@@ -320,14 +353,14 @@ def experiment_one_subject(
 
 def save_results_dict(
     results_dict: dict,
-    dir_name: str,
     filename: str,
 ) -> None:
 
     dict_to_dump = {'results': results_dict}  # add an outer key
 
-    Path(dir_name).mkdir(parents=True, exist_ok=True)
-    path = os.path.join(dir_name, filename)
+    DST_DIR = './results'  # destionation directory
+    Path(DST_DIR).mkdir(parents=True, exist_ok=True)
+    path = os.path.join(DST_DIR, filename)
     with open(path, 'wb') as f:
         pickle.dump(dict_to_dump, f)
 
@@ -335,12 +368,12 @@ def save_results_dict(
 
 
 def experiment_all_subjects(
-    input_channels: int,
-    minibatch_size: int,
-    optimizer_str: str,
-    results_directory: str,
+    learning_mode: str,
     results_filename: str,
-) -> dict:
+    ) -> dict:
+
+    assert learning_mode in ['baseline', 'online']
+    assert isinstance(results_filename, str)
 
     # ----------------------------------------------------------------------- #
     # set the seeds of all the random generators used
@@ -365,15 +398,12 @@ def experiment_all_subjects(
         results_allsubj_dict['subject'][idx_subject] = \
             experiment_one_subject(
                 idx_subject=idx_subject,
-                input_channels=input_channels,
-                minibatch_size=minibatch_size,
-                optimizer_str=optimizer_str,
+                learning_mode=learning_mode,
             )
 
         # save all results after each subject
         save_results_dict(
             results_dict=results_allsubj_dict,
-            dir_name=results_directory,
             filename=results_filename,
         )
 

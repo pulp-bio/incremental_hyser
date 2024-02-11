@@ -16,7 +16,7 @@ from . import goodness as good
 MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 
 
-WINDOW = 256
+WINDOW = 63  # due to the deployed net
 SLIDE = 64
 
 class _EMGPytorchDataset():
@@ -179,14 +179,11 @@ def do_training(
     xvalid: np.ndarray[np.float32] | None,
     yvalid: np.ndarray[np.float32] | None,
     model: torch.nn.Module,
-    loadermode_train: \
-        [LoaderMode.TRAINING_RANDOMIZED, LoaderMode.TRAINING_SEQUENTIAL],
+    loadermode_train:
+        LoaderMode.TRAINING_RANDOMIZED | LoaderMode.TRAINING_SEQUENTIAL,
     minibatch_train: int,
-    # minibatch_valid: int,
     num_epochs: int,
-    criterion: torch.nn.Module | None = None,  # None as default (ugly)
-    optimizer: torch.optim.Optimizer | None = None,  # None as default (ugly)
-    
+    optimizer: torch.optim.Optimizer,
 ) -> dict:
 
     assert (xvalid is None) == (yvalid is None)
@@ -200,15 +197,8 @@ def do_training(
     model.to(DEVICE)
     model.train()
 
-    if criterion is None:
-        criterion = torch.nn.MSELoss()
+    criterion = torch.nn.MSELoss()
     criterion.to(DEVICE)
-
-    if optimizer is None:
-        params = model.parameters()
-        lr = 0.001
-        weight_decay = 0.001
-        optimizer = torch.optim.Adam(params, lr=lr, weight_decay=weight_decay)
 
     history_dict = {
         'epoch': {},

@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 from . import hyser as hy
 
 
+MVC_V_DICT = None
+
+
 def extract_mvc(
     force: np.ndarray[np.float32],
     force_direction: hy.ForceDirection,
