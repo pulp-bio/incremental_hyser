@@ -15,7 +15,6 @@ from . import goodness as good
 
 MINIBATCH_SIZE_INFER = 8192  # minibatch size for inference
 
-
 WINDOW = 63  # due to the deployed net
 SLIDE = 64
 
@@ -82,9 +81,7 @@ def _collate_xy_pairs(
     del minibatch
 
     x = torch.tensor(x, dtype=torch.float32, requires_grad=False, device='cpu')
-    # PyTorch's crossentropy wants int64 format for the target labels
-    # here, do not specify the type to use it for classification and regression
-    y = torch.tensor(y, requires_grad=False, device='cpu')
+    y = torch.tensor(y, dtype=torch.float32, requires_grad=False, device='cpu')
 
     return x, y
 

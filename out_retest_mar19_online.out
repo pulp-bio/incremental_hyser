@@ -1,0 +1,1073 @@
+
+
+sys.argv = 
+
+['experiment.py', '--m', 'online', '-f', 'retest_mar19_online.pkl']
+
+
+args = 
+
+Namespace(filename='retest_mar19_online.pkl', mode='online')
+
+
+
+
+------------------------------------------------------------
+SUBJECT 1/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.763s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0798	0.0616		0.0858	0.0670		42.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0937	0.0579		0.0895	0.0559		86.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1455	0.0952		0.1337	0.0872		15.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 2/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.562s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0892	0.0742		0.0903	0.0734		43.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0817	0.0505		0.0803	0.0494		86.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1019	0.0610		0.0990	0.0575		13.1
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 3/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.602s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1092	0.0860		0.1038	0.0825		43.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0890	0.0499		0.0902	0.0514		88.1
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1024	0.0640		0.0847	0.0528		14.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 4/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.628s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0726	0.0507		0.0668	0.0463		43.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0769	0.0493		0.0794	0.0507		86.9
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0890	0.0629		0.1418	0.1021		14.2
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 5/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.779s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0887	0.0602		0.0856	0.0582		44.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0788	0.0460		0.0834	0.0503		84.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1770	0.1222		0.1490	0.1132		15.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 6/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.649s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0905	0.0699		0.0961	0.0738		45.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0863	0.0564		0.0995	0.0631		92.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1232	0.0852		0.1476	0.1022		15.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 7/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.525s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0932	0.0793		0.0969	0.0812		45.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0894	0.0552		0.1011	0.0586		87.4
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0715	0.0473		0.0779	0.0527		14.9
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 8/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.583s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0991	0.0749		0.1035	0.0758		45.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0782	0.0447		0.0950	0.0539		87.1
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0999	0.0647		0.1672	0.0999		14.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 9/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.582s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0984	0.0816		0.1003	0.0839		46.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0944	0.0543		0.0986	0.0579		88.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1989	0.1468		0.1361	0.0869		16.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 10/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.502s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0945	0.0685		0.0952	0.0702		46.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1221	0.0790		0.1503	0.0940		87.2
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1067	0.0735		0.1329	0.0995		15.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 11/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.562s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1017	0.0833		0.0941	0.0796		47.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0993	0.0589		0.1368	0.0804		82.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1203	0.0774		0.1237	0.0827		13.9
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 12/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.596s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0733	0.0536		0.0840	0.0589		43.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0938	0.0628		0.1273	0.0754		81.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.2442	0.1294		0.2531	0.1513		14.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 13/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.483s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0831	0.0597		0.0769	0.0560		43.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0952	0.0596		0.0973	0.0612		75.4
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1778	0.1204		0.1814	0.1195		10.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 14/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.488s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0942	0.0735		0.1144	0.0817		33.2
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1784	0.1135		0.1868	0.1282		87.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1602	0.1037		0.2443	0.1488		14.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 15/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.562s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0792	0.0556		0.0728	0.0516		43.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0979	0.0639		0.0873	0.0552		80.3
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1966	0.1282		0.1971	0.1419		13.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 16/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.480s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0680	0.0430		0.0673	0.0383		40.0
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1164	0.0702		0.1082	0.0697		75.2
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1186	0.0812		0.1818	0.1189		13.4
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 17/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.477s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0910	0.0672		0.0850	0.0632		37.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1329	0.0747		0.1043	0.0635		74.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1430	0.0962		0.1209	0.0770		13.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 18/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.491s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1134	0.0926		0.1150	0.0955		38.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.2052	0.1231		0.1658	0.1124		79.9
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1409	0.0882		0.2014	0.1290		13.8
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 19/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.481s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0938	0.0767		0.1003	0.0795		37.5
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1218	0.0741		0.1331	0.0828		77.7
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1115	0.0745		0.1449	0.0949		12.1
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+------------------------------------------------------------
+SUBJECT 20/20
+------------------------------------------------------------
+
+
+Time taken for extracting all MVCs: 0.484s
+
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.0922	0.0794		0.0984	0.0832		37.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1117	0.0749		0.1421	0.0915		75.1
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM
+
+		TRAINING		VALIDATION
+
+EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
+
+1/1		0.1181	0.0859		0.2206	0.1535		12.6
+
+
+Validating on ONEDOF
+
+
+Validating on NDOF
+
+
+Validating on RANDOM

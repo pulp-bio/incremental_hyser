@@ -19,6 +19,7 @@ def parse_my_args(argv=None) -> argparse.Namespace:
         nargs='?', type=str, choices=["baseline", "online"], required=True,
         help="Learning mode: offline baseline or online",
     )
+
     # name of the results' destination file
     parser.add_argument(
         '-f', '--filename',

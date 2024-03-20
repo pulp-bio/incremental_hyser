@@ -7,10 +7,11 @@ import pickle
 import numpy as np
 import torch.optim
 
+
 from ..hyser import hyser as hy
 from ..hyser import mvc
 from ..learning import settings as learningsettings
-from ..learning.models import TinierNet8
+from ..learning.models import TinyNet
 from ..learning import learning as learn
 from ..learning import goodness as good
 
@@ -205,16 +206,21 @@ def experiment_one_subject(
     assert idx_subject in range(hy.NUM_SUBJECTS)
     assert learning_mode in ['baseline', 'online']
 
-    model = TinierNet8(num_ch_in=64, num_ch_out=hy.NUM_CHANNELS_FORCE)
-    # model.half()
+    model = TinyNet(num_ch_in=64, num_ch_out=hy.NUM_CHANNELS_FORCE)
+    # conversion to fp16 (if needed) is done inside the training function
+
+    # ----------------------------------------------------------------------- #
+    # ----------------------------------------------------------------------- #
 
     if learning_mode == 'baseline':
 
         loadermode_train = learn.LoaderMode.TRAINING_RANDOMIZED
-        minibatch_train = 32
+        minibatch_train = 64
+        # ------------------------------------------------------------------- #
         optimizer = torch.optim.Adam(
             model.parameters(), lr=0.0001, weight_decay=0.0)
-        num_epochs = 8
+        # ------------------------------------------------------------------- #
+        num_epochs = 16  # 32
 
     elif learning_mode == 'online':
     
@@ -226,8 +232,6 @@ def experiment_one_subject(
 
     else:
         raise NotImplementedError
-
-
 
     # ----------------------------------------------------------------------- #
     # ----------------------------------------------------------------------- #
