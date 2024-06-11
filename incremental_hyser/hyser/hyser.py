@@ -333,8 +333,8 @@ def load_hdsemg_and_force(
     # subsample the HD-sEMG channels from 256 to 64: step 2 in both dimensions
     num_samples_hdsemg = hdsemg_v.shape[1]
     hdsemg_v = hdsemg_v.reshape((8, 8, 4, num_samples_hdsemg))
-    hdsemg_v = hdsemg_v[::2, ::2]
-    hdsemg_v = hdsemg_v.reshape((64, num_samples_hdsemg))
+    hdsemg_v = hdsemg_v[::8, ::8]
+    hdsemg_v = hdsemg_v.reshape((4, num_samples_hdsemg))
 
     # interpolate the force
     num_hi = hdsemg_v.shape[1]
