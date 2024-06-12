@@ -2,12 +2,12 @@
 
 sys.argv = 
 
-['experiment.py', '--m', 'online', '-f', 'fewchannels_04ch_mar25_online.pkl']
+['experiment.py', '--m', 'online', '-f', 'retest_jun2024_online.pkl']
 
 
 args = 
 
-Namespace(filename='fewchannels_04ch_mar25_online.pkl', mode='online')
+Namespace(filename='retest_jun2024_online.pkl', mode='online')
 
 
 
@@ -17,14 +17,14 @@ SUBJECT 1/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.691s
+Time taken for extracting all MVCs: 0.519s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1216	0.1078		0.1263	0.1103		43.2
+1/1		0.0798	0.0616		0.0858	0.0670		44.6
 
 
 Validating on ONEDOF
@@ -39,7 +39,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0953	0.0594		0.0916	0.0576		88.5
+1/1		0.0937	0.0579		0.0895	0.0559		92.9
 
 
 Validating on ONEDOF
@@ -54,7 +54,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1446	0.0953		0.1347	0.0884		13.6
+1/1		0.1455	0.0952		0.1337	0.0872		14.2
 
 
 Validating on ONEDOF
@@ -70,14 +70,14 @@ SUBJECT 2/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.579s
+Time taken for extracting all MVCs: 1.015s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0712	0.0512		0.0763	0.0543		41.1
+1/1		0.0892	0.0742		0.0903	0.0734		43.2
 
 
 Validating on ONEDOF
@@ -92,7 +92,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0812	0.0524		0.0805	0.0515		83.5
+1/1		0.0817	0.0505		0.0803	0.0494		89.2
 
 
 Validating on ONEDOF
@@ -107,7 +107,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1027	0.0627		0.0989	0.0582		14.1
+1/1		0.1019	0.0610		0.0990	0.0575		15.3
 
 
 Validating on ONEDOF
@@ -123,14 +123,14 @@ SUBJECT 3/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.494s
+Time taken for extracting all MVCs: 0.627s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0595	0.0326		0.0577	0.0315		44.2
+1/1		0.1092	0.0860		0.1038	0.0825		45.3
 
 
 Validating on ONEDOF
@@ -145,7 +145,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0880	0.0520		0.0901	0.0537		87.9
+1/1		0.0890	0.0499		0.0902	0.0514		91.7
 
 
 Validating on ONEDOF
@@ -160,7 +160,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1005	0.0638		0.0847	0.0535		15.3
+1/1		0.1024	0.0640		0.0847	0.0528		15.2
 
 
 Validating on ONEDOF
@@ -176,14 +176,14 @@ SUBJECT 4/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.511s
+Time taken for extracting all MVCs: 0.724s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0899	0.0765		0.0876	0.0769		43.2
+1/1		0.0726	0.0507		0.0668	0.0463		46.7
 
 
 Validating on ONEDOF
@@ -198,7 +198,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0776	0.0519		0.0807	0.0542		86.6
+1/1		0.0769	0.0493		0.0794	0.0507		91.7
 
 
 Validating on ONEDOF
@@ -213,7 +213,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0897	0.0645		0.1421	0.1038		13.8
+1/1		0.0890	0.0629		0.1418	0.1021		16.7
 
 
 Validating on ONEDOF
@@ -236,7 +236,7 @@ Time taken for extracting all MVCs: 0.683s
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1063	0.0823		0.1100	0.0850		40.6
+1/1		0.0887	0.0602		0.0856	0.0582		47.4
 
 
 Validating on ONEDOF
@@ -251,7 +251,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0796	0.0483		0.0857	0.0537		80.2
+1/1		0.0788	0.0460		0.0834	0.0503		92.6
 
 
 Validating on ONEDOF
@@ -266,7 +266,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1767	0.1223		0.1496	0.1135		13.7
+1/1		0.1770	0.1222		0.1490	0.1132		15.6
 
 
 Validating on ONEDOF
@@ -282,14 +282,14 @@ SUBJECT 6/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.602s
+Time taken for extracting all MVCs: 0.647s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1041	0.0802		0.1063	0.0799		41.6
+1/1		0.0905	0.0699		0.0961	0.0738		47.4
 
 
 Validating on ONEDOF
@@ -304,7 +304,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0861	0.0529		0.0998	0.0597		81.9
+1/1		0.0863	0.0564		0.0995	0.0631		95.1
 
 
 Validating on ONEDOF
@@ -319,7 +319,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1223	0.0835		0.1461	0.0999		14.3
+1/1		0.1232	0.0852		0.1476	0.1022		14.8
 
 
 Validating on ONEDOF
@@ -335,14 +335,14 @@ SUBJECT 7/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.503s
+Time taken for extracting all MVCs: 0.677s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0817	0.0609		0.0852	0.0637		43.2
+1/1		0.0932	0.0793		0.0969	0.0812		45.3
 
 
 Validating on ONEDOF
@@ -357,7 +357,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0893	0.0572		0.1016	0.0623		79.0
+1/1		0.0894	0.0552		0.1011	0.0586		90.7
 
 
 Validating on ONEDOF
@@ -372,7 +372,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0717	0.0493		0.0813	0.0568		15.3
+1/1		0.0715	0.0473		0.0779	0.0527		14.6
 
 
 Validating on ONEDOF
@@ -388,14 +388,14 @@ SUBJECT 8/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.503s
+Time taken for extracting all MVCs: 0.603s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1140	0.0979		0.1155	0.0965		42.3
+1/1		0.0991	0.0749		0.1035	0.0758		44.1
 
 
 Validating on ONEDOF
@@ -410,7 +410,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0772	0.0442		0.0943	0.0535		86.3
+1/1		0.0782	0.0447		0.0950	0.0539		90.8
 
 
 Validating on ONEDOF
@@ -425,7 +425,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0999	0.0647		0.1667	0.1000		14.1
+1/1		0.0999	0.0647		0.1672	0.0999		15.4
 
 
 Validating on ONEDOF
@@ -441,14 +441,14 @@ SUBJECT 9/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.499s
+Time taken for extracting all MVCs: 0.625s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1008	0.0773		0.1009	0.0789		44.4
+1/1		0.0984	0.0816		0.1003	0.0839		48.6
 
 
 Validating on ONEDOF
@@ -463,7 +463,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0942	0.0523		0.0980	0.0567		87.6
+1/1		0.0944	0.0543		0.0986	0.0579		95.0
 
 
 Validating on ONEDOF
@@ -478,7 +478,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1944	0.1419		0.1351	0.0858		14.9
+1/1		0.1989	0.1468		0.1361	0.0869		15.4
 
 
 Validating on ONEDOF
@@ -494,14 +494,14 @@ SUBJECT 10/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.499s
+Time taken for extracting all MVCs: 0.629s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0918	0.0691		0.0948	0.0717		38.2
+1/1		0.0945	0.0685		0.0952	0.0702		47.3
 
 
 Validating on ONEDOF
@@ -516,7 +516,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1219	0.0783		0.1495	0.0926		84.4
+1/1		0.1221	0.0790		0.1503	0.0940		97.1
 
 
 Validating on ONEDOF
@@ -531,7 +531,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1075	0.0742		0.1324	0.0990		13.7
+1/1		0.1067	0.0735		0.1329	0.0995		16.5
 
 
 Validating on ONEDOF
@@ -547,14 +547,14 @@ SUBJECT 11/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.529s
+Time taken for extracting all MVCs: 0.543s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0884	0.0732		0.0847	0.0729		42.4
+1/1		0.1017	0.0833		0.0941	0.0796		46.7
 
 
 Validating on ONEDOF
@@ -569,7 +569,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0995	0.0599		0.1368	0.0815		84.4
+1/1		0.0993	0.0589		0.1368	0.0804		94.3
 
 
 Validating on ONEDOF
@@ -584,7 +584,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1204	0.0774		0.1236	0.0825		12.8
+1/1		0.1203	0.0774		0.1237	0.0827		16.1
 
 
 Validating on ONEDOF
@@ -600,14 +600,14 @@ SUBJECT 12/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.512s
+Time taken for extracting all MVCs: 0.639s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1086	0.0820		0.1195	0.0880		42.6
+1/1		0.0733	0.0536		0.0840	0.0589		48.6
 
 
 Validating on ONEDOF
@@ -622,7 +622,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0944	0.0617		0.1286	0.0750		82.6
+1/1		0.0938	0.0628		0.1273	0.0754		97.0
 
 
 Validating on ONEDOF
@@ -637,7 +637,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.2450	0.1294		0.2550	0.1518		12.9
+1/1		0.2442	0.1294		0.2531	0.1513		15.7
 
 
 Validating on ONEDOF
@@ -653,14 +653,14 @@ SUBJECT 13/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.547s
+Time taken for extracting all MVCs: 1.002s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0935	0.0671		0.0868	0.0660		42.4
+1/1		0.0831	0.0597		0.0769	0.0560		45.2
 
 
 Validating on ONEDOF
@@ -675,7 +675,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0956	0.0584		0.0974	0.0602		86.4
+1/1		0.0952	0.0596		0.0973	0.0612		92.5
 
 
 Validating on ONEDOF
@@ -690,7 +690,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1773	0.1194		0.1811	0.1190		14.1
+1/1		0.1778	0.1204		0.1814	0.1195		16.3
 
 
 Validating on ONEDOF
@@ -706,14 +706,14 @@ SUBJECT 14/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.539s
+Time taken for extracting all MVCs: 0.629s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0932	0.0670		0.1186	0.0754		40.2
+1/1		0.0942	0.0735		0.1144	0.0817		48.5
 
 
 Validating on ONEDOF
@@ -728,7 +728,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1791	0.1170		0.1896	0.1327		81.9
+1/1		0.1784	0.1135		0.1868	0.1282		94.7
 
 
 Validating on ONEDOF
@@ -743,7 +743,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1605	0.1050		0.2448	0.1503		14.3
+1/1		0.1602	0.1037		0.2443	0.1488		14.9
 
 
 Validating on ONEDOF
@@ -759,14 +759,14 @@ SUBJECT 15/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.617s
+Time taken for extracting all MVCs: 0.593s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1302	0.1125		0.1194	0.1024		43.0
+1/1		0.0792	0.0556		0.0728	0.0516		47.3
 
 
 Validating on ONEDOF
@@ -781,7 +781,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1002	0.0654		0.0896	0.0564		81.5
+1/1		0.0979	0.0639		0.0873	0.0552		92.7
 
 
 Validating on ONEDOF
@@ -796,7 +796,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1973	0.1275		0.1994	0.1420		14.1
+1/1		0.1966	0.1282		0.1971	0.1419		16.3
 
 
 Validating on ONEDOF
@@ -812,14 +812,14 @@ SUBJECT 16/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.491s
+Time taken for extracting all MVCs: 0.617s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1080	0.0830		0.1079	0.0828		43.5
+1/1		0.0680	0.0430		0.0673	0.0383		46.7
 
 
 Validating on ONEDOF
@@ -834,7 +834,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1168	0.0673		0.1075	0.0667		81.4
+1/1		0.1164	0.0702		0.1082	0.0697		91.6
 
 
 Validating on ONEDOF
@@ -849,7 +849,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1197	0.0800		0.1820	0.1170		14.0
+1/1		0.1186	0.0812		0.1818	0.1189		15.3
 
 
 Validating on ONEDOF
@@ -865,14 +865,14 @@ SUBJECT 17/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.497s
+Time taken for extracting all MVCs: 0.542s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1033	0.0865		0.1036	0.0871		43.2
+1/1		0.0910	0.0672		0.0850	0.0632		44.7
 
 
 Validating on ONEDOF
@@ -887,7 +887,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1329	0.0752		0.1057	0.0661		84.4
+1/1		0.1329	0.0747		0.1043	0.0635		87.3
 
 
 Validating on ONEDOF
@@ -902,7 +902,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1429	0.0972		0.1210	0.0782		14.6
+1/1		0.1430	0.0962		0.1209	0.0770		14.0
 
 
 Validating on ONEDOF
@@ -918,14 +918,14 @@ SUBJECT 18/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.491s
+Time taken for extracting all MVCs: 0.481s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1104	0.0832		0.1112	0.0845		31.9
+1/1		0.1134	0.0926		0.1150	0.0955		41.1
 
 
 Validating on ONEDOF
@@ -940,7 +940,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.2053	0.1229		0.1655	0.1116		72.3
+1/1		0.2052	0.1231		0.1658	0.1124		80.7
 
 
 Validating on ONEDOF
@@ -955,7 +955,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1403	0.0872		0.2021	0.1300		12.5
+1/1		0.1409	0.0882		0.2014	0.1290		13.8
 
 
 Validating on ONEDOF
@@ -971,14 +971,14 @@ SUBJECT 19/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.481s
+Time taken for extracting all MVCs: 0.473s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1023	0.0879		0.1040	0.0870		35.1
+1/1		0.0938	0.0767		0.1003	0.0795		40.9
 
 
 Validating on ONEDOF
@@ -993,7 +993,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1216	0.0772		0.1323	0.0858		73.6
+1/1		0.1218	0.0741		0.1331	0.0828		82.0
 
 
 Validating on ONEDOF
@@ -1008,7 +1008,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1124	0.0759		0.1450	0.0963		13.2
+1/1		0.1115	0.0745		0.1449	0.0949		13.2
 
 
 Validating on ONEDOF
@@ -1024,14 +1024,14 @@ SUBJECT 20/20
 ------------------------------------------------------------
 
 
-Time taken for extracting all MVCs: 0.478s
+Time taken for extracting all MVCs: 0.521s
 
 
 		TRAINING		VALIDATION
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.0841	0.0629		0.0896	0.0683		27.8
+1/1		0.0922	0.0794		0.0984	0.0832		41.6
 
 
 Validating on ONEDOF
@@ -1046,7 +1046,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1119	0.0754		0.1429	0.0927		68.7
+1/1		0.1117	0.0749		0.1421	0.0915		83.5
 
 
 Validating on ONEDOF
@@ -1061,7 +1061,7 @@ Validating on RANDOM
 
 EPOCH		RMSE	MAE		RMSE	MAE		Time (s)
 
-1/1		0.1168	0.0851		0.2201	0.1532		13.2
+1/1		0.1181	0.0859		0.2206	0.1535		13.7
 
 
 Validating on ONEDOF

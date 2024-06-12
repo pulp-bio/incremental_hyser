@@ -206,7 +206,7 @@ def experiment_one_subject(
     assert idx_subject in range(hy.NUM_SUBJECTS)
     assert learning_mode in ['baseline', 'online']
 
-    model = TinyNet(num_ch_in=4, num_ch_out=hy.NUM_CHANNELS_FORCE)
+    model = TinyNet(num_ch_in=64, num_ch_out=hy.NUM_CHANNELS_FORCE)
     # conversion to fp16 (if needed) is done inside the training function
 
     # ----------------------------------------------------------------------- #
