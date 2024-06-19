@@ -4,7 +4,7 @@
 
 ## Introduction
 This repository contains the code developed for our paper M. Zanghieri _et al._, “sEMG-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller” [[1]](#1).
-The paper is an extension of our previous work M. Zanghieri _et al._, “Online unsupervised arm posture adaptation for sEMG-based gesture recognition on a parallel ultra-low-power microcontroller” [[2]](#2).
+The paper is an extension of our previous work M. Zanghieri _et al._, “Online unsupervised arm posture adaptation for sEMG-based gesture recognition on a parallel ultra-low-power microcontroller” [[2]](#2) (public (repo)[https://github.com/pulp-bio/online-semg-posture-adaptation/tree/main]).
 
 
 
@@ -45,9 +45,15 @@ When using of referencing this project, please cite our work [[1]](#1):
 
 <a id="1">[1]</a>
 ...
+M. Zanghieri, P. M. Rapa, M. Orlandi, E. Donati, L. Benini, S. Benatti “sEMG-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller,” _IEEE Transactions on Biomedical Circuits and Systems_, DOI: [10.1109/TBCAS.2024.3415392]([https://doi.org/10.1109/JSEN.2024.3359917](https://ieeexplore.ieee.org/document/10559752)).
 
 <a id="2">[2]</a>
-...
+M. Zanghieri, M. Orlandi, E. Donati, E. Gruppioni, L. Benini, S. Benatti,
+“Online unsupervised arm posture adaptation for sEMG-based gesture recognition on a parallel ultra-low-power microcontroller,”
+in _2023 IEEE International Conference on Biomedical Circuits and Systems (BioCAS)_,
+2023,
+pp. 1-5.
+DOI: [10.1109/BioCAS58349.2023.10388902](https://doi.org/10.1109/BioCAS58349.2023.10388902).
 
 
 
