@@ -4,7 +4,7 @@
 
 ## Introduction
 This repository contains the code developed for our paper M. Zanghieri _et al._, “sEMG-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller” [[1]](#1).
-The paper is an extension of our previous work M. Zanghieri _et al._, “Online unsupervised arm posture adaptation for sEMG-based gesture recognition on a parallel ultra-low-power microcontroller” [[2]](#2) (public (repo)[https://github.com/pulp-bio/online-semg-posture-adaptation/tree/main]).
+The paper is an extension of our previous work M. Zanghieri _et al._, “Online unsupervised arm posture adaptation for sEMG-based gesture recognition on a parallel ultra-low-power microcontroller” [[2]](#2) (public [repo](https://github.com/pulp-bio/online-semg-posture-adaptation/tree/main])).
 
 
 
