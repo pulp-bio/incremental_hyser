@@ -44,8 +44,7 @@ When using of referencing this project, please cite our work [[1]](#1):
 ## References
 
 <a id="1">[1]</a>
-...
-M. Zanghieri, P. M. Rapa, M. Orlandi, E. Donati, L. Benini, S. Benatti “sEMG-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller,” _IEEE Transactions on Biomedical Circuits and Systems_, DOI: [10.1109/TBCAS.2024.3415392]([https://doi.org/10.1109/JSEN.2024.3359917](https://ieeexplore.ieee.org/document/10559752)).
+M. Zanghieri, P. M. Rapa, M. Orlandi, E. Donati, L. Benini, S. Benatti “sEMG-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller,” _IEEE Transactions on Biomedical Circuits and Systems_, DOI: [10.1109/TBCAS.2024.3415392](https://doi.org/10.1109/TBCAS.2024.3415392)).
 
 <a id="2">[2]</a>
 M. Zanghieri, M. Orlandi, E. Donati, E. Gruppioni, L. Benini, S. Benatti,
