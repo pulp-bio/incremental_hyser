@@ -26,10 +26,17 @@ This work was realized mainly at the [**Energy-Efficient Embedded Systems Labora
 
 
 ## Citation
-When referring to our paper or using our UniBo-INAIL dataset, please cite our work [[1]](#1):
+When using of referencing this project, please cite our work [[1]](#1):
 ```
-@article{...
-  }
+@article{zanghieri2024semg_incremental_online_learning,
+  author={Zanghieri, Marcello and Rapa, Pierangelo Maria and Orlandi, Mattia and Donati, Elisa and Benini, Luca and Benatti, Simone},
+  journal={IEEE Transactions on Biomedical Circuits and Systems}, 
+  title={{sEMG}-driven Hand Dynamics Estimation with Incremental Online Learning on a Parallel Ultra-Low-Power Microcontroller}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/TBCAS.2024.3415392}}
 ```
 
 
